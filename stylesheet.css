@@ -1,0 +1,16 @@
+body {
+	background-image: url("images/pigtram.jpg");
+}
+
+#front-header {
+	border: solid 1px;
+	background-color: rgba(200, 200, 0, 0.75);
+}
+
+.title {
+	font-size: 32pt;
+}
+
+.subtitle {
+	font-size: 12pt;
+}

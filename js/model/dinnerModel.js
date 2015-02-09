@@ -3,6 +3,7 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
+	var menu = [];
 
 	this.setNumberOfGuests = function(num) {
 		this.numberOfGuests = num;
@@ -15,25 +16,31 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		return this.menu[type];
+		return this.getDish(menu[type]);
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		return this.menu;
+		fullMenu = [];
+
+		for (var i in menu) {
+			fullMenu.push(this.getDish(menu[i]));
+		}
+		return fullMenu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
 		var ingredients = [];
 
-		if (this.menu == null) {
+		if (menu == null) {
 			return;
 		}
 
-		for (var dish in this.menu) {
-			for (var ingredient in dish["ingredients"]) {
-				ingredients.push(ingredient);
+		for (var key in menu) {
+			dish = this.getDish(menu[key]);
+			for (var j in dish.ingredients) {
+				ingredients.push(dish.ingredients[j]);
 			}
 		}
 
@@ -42,19 +49,29 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		//TODO Lab 2
+		ingredients = this.getAllIngredients();
+		var price = 0;
+		for (var i in ingredients) {
+			price += ingredients[i]["price"];
+		}
+		return price;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		dish = this.getDish(id);
-		this.menu[dish["type"]] = id;
+		menu[dish["type"]] = id;
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		//TODO Lab 2
+		for (var key in menu) {
+			if (menu[key] == id) {
+				delete menu[key];
+			}
+		}
+		
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -76,12 +93,12 @@ var DinnerModel = function() {
 				}
 			}
 			return dish.type == type && found;
-		});	
+		});
 	}
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
-	  for(key in dishes){
+		for(key in dishes){
 			if(dishes[key].id == id) {
 				return dishes[key];
 			}
