@@ -1,16 +1,66 @@
 body {
-	background-image: url("images/pigtram.jpg");
+	font-family: "Helvetica Neue";
+	background-image: url('images/pigtram.jpg');
 }
 
 #front-header {
-	border: solid 1px;
-	background-color: rgba(200, 200, 0, 0.75);
+	border: solid 2px;
+	background-color: rgba(255, 229, 0, 0.75);
+	padding: 10px;
+	padding-bottom: 20px;
+}
+
+#header {
+	border: solid 2px;
+	background-color: rgba(200, 200, 200, 0.75);
+	padding: 10px;
+	padding-bottom: 20px;
 }
 
 .title {
 	font-size: 32pt;
+	margin-right: 10px;
+	font-family: "Helvetica Neue";
 }
 
 .subtitle {
 	font-size: 12pt;
+	font-family: "Helvetica Neue";
+	font-style: italic;
 }
+
+#welcome-box {
+	background-color: rgba(255, 255, 255, 0.75);
+	width: 500px;
+	height: 270px;
+	position: absolute;
+	top: 200px;
+	left: 0px;
+	padding-left: 25px;
+}
+
+#welcome-title {
+	font-size: 18px;
+	border-bottom: solid 1px;
+	text-transform: capitalize;
+	color: black;
+	font-size: 24px;
+}
+
+#welcome-text {
+	color: black;
+	margin-bottom: 50px;
+	font-size: 12px;
+}
+
+#create-new-dinner-button-descr {
+	font-size: 14px;
+	text-transform: lowercase;
+}
+
+#create-new-dinner {
+	background-color: orange;
+	border: solid 1px black;
+	box-shadow: 2px 2px 0px;
+}
+
