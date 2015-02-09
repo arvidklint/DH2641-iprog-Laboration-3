@@ -4,29 +4,40 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 
-
 	this.setNumberOfGuests = function(num) {
-		//TODO Lab 2
+		this.numberOfGuests = num;
 	}
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		//TODO Lab 2
+		return this.numberOfGuests;
 	}
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		//TODO Lab 2
+		return this.menu[type];
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		//TODO Lab 2
+		return this.menu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		//TODO Lab 2
+		var ingredients = [];
+
+		if (this.menu == null) {
+			return;
+		}
+
+		for (var dish in this.menu) {
+			for (var ingredient in dish["ingredients"]) {
+				ingredients.push(ingredient);
+			}
+		}
+
+		return ingredients;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -37,7 +48,8 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		//TODO Lab 2 
+		dish = this.getDish(id);
+		this.menu[dish["type"]] = id;
 	}
 
 	//Removes dish from menu
@@ -49,22 +61,22 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
-	  return $(dishes).filter(function(index,dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			$.each(dish.ingredients,function(index,ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
+		return $(dishes).filter(function(index,dish) {
+			var found = true;
+			if(filter){
+				found = false;
+				$.each(dish.ingredients,function(index,ingredient) {
+					if(ingredient.name.indexOf(filter)!=-1) {
+						found = true;
+					}
+				});
+				if(dish.name.indexOf(filter) != -1)
+				{
 					found = true;
 				}
-			});
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
 			}
-		}
-	  	return dish.type == type && found;
-	  });	
+			return dish.type == type && found;
+		});	
 	}
 
 	//function that returns a dish of specific ID
