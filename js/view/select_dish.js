@@ -14,16 +14,17 @@ var SelectDish = function(container, model) {
 	after(container);
 }
 
+// var DishChooser = function(container) {
+// 	container.append('<div class="row">');
+// 	container.append('<div class="col-xs-12">Rad</div>');
+
+
+// 	container.append('</div>');
+// }
 
 var MeinFrame = function(container) {
-	container.append('<div class="col-xs-9" id="main"> asdf');
-
-	SelectDish(container);
-	DishList(container);
-
+	container.append('<div class="col-xs-9" id="main">');
+	container.append('<div class="row"><div class="col-xs-12">a</div></div>');
 	container.append('</div>');
 }
 
-var SelectDish = function(container) {
-	
-}

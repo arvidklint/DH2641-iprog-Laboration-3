@@ -17,13 +17,8 @@ var before = function(container) {
 
 var myDinner = function(container) {
 	container.append('<div class="col-xs-3" id="myDinner">' +
-	'asdf' +
+	'myDinner' +
 	'</div>');
-}
-
-var meinFrame = function(container) {
-	container.append('<div class="col-xs-9" id="main"> asdf');
-	container.append('</div>');
 }
 
 var after = function(container) {
