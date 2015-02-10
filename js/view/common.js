@@ -1,3 +1,5 @@
+var appString = "";
+
 function header(container) {
 	container.append('<div class="container-fluid" id="header">' + 
 		'<span class="title">Homelette</span>' + 
@@ -10,18 +12,19 @@ function header(container) {
 // 	mainFrame(container);
 // }
 
-var before = function(container) {
-	container.append('<div class="container-fluid">');
-	container.append('<div class="row">');
+function before() {
+	appString = '<div class="container-fluid">';
+	appString += '<div class="row">';
 }
 
-var myDinner = function(container) {
-	container.append('<div class="col-xs-3" id="myDinner">' +
-	'myDinner' +
-	'</div>');
+function myDinner() {
+	appString += '<div class="col-xs-3" id="myDinner">';
+	appString += 'myDinner';
+	appString += '</div>';
 }
 
-var after = function(container) {
-	container.append('</div>');
-	container.append('</div>');
+function after(container) {
+	appString += '</div>';
+	appString += '</div>';
+	container.append(appString);
 }

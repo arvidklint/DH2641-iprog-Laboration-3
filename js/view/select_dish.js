@@ -6,10 +6,10 @@ $(function() {
 
 var SelectDish = function(container, model) {
 	header(container);
-	before(container);
+	before();
 
-	myDinner(container);
-	MeinFrame(container);
+	myDinner();
+	meinFrame();
 
 	after(container);
 }
@@ -22,9 +22,12 @@ var SelectDish = function(container, model) {
 // 	container.append('</div>');
 // }
 
-var MeinFrame = function(container) {
-	container.append('<div class="col-xs-9" id="main">');
-	container.append('<div class="row"><div class="col-xs-12">a</div></div>');
-	container.append('</div>');
+function meinFrame() {
+	appString += '<div class="col-xs-9" id="main">';
+	appString += '<div class="row">';
+	appString += '<div class="col-xs-12">a</div>';
+	appString += '<div class="col-xs-12">b</div>';
+	appString += '</div>';
+	appString += '</div>';
 }
 
