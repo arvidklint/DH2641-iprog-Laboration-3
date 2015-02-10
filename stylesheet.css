@@ -1,5 +1,5 @@
 body {
-	font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	background-image: url('images/pigtram.jpg');
 }
 
@@ -20,12 +20,12 @@ body {
 .title {
 	font-size: 32pt;
 	margin-right: 10px;
-	font-family: "Helvetica Neue";
+	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 }
 
 .subtitle {
 	font-size: 12pt;
-	font-family: "Helvetica Neue";
+	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	font-style: italic;
 }
 
