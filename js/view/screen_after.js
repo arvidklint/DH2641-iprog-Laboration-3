@@ -5,5 +5,5 @@ $(function() {
 );
 
 var GggView = function(container, model) {
-	header(container);
+
 }

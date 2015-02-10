@@ -5,35 +5,28 @@ function header(container) {
 		'</div>');
 }
 
-var myDinner = function(container) {
-	container.append('<div class="container">');
+// var sidebarAndMain = function(container) {
+// 	myDinner(container);
+// 	mainFrame(container);
+// }
+
+var before = function(container) {
+	container.append('<div class="container-fluid">');
 	container.append('<div class="row">');
-	container.append('<div class="row-same-height">');
+}
 
-	container.append('<div class="col-xs-3 col-xs-height" id="myDinner">' +
-		'asdf' +
-		'</div>');
+var myDinner = function(container) {
+	container.append('<div class="col-xs-3" id="myDinner">' +
+	'asdf' +
+	'</div>');
+}
 
-	container.append('<div class="col-xs-9 col-xs-height" id="main">' + 
-		'asdf Lorem ipsum dolor sit amet, pri ne torquatos pertinacia repudiandae. Vim nibh inermis ut, has aeterno minimum in, pro reque detraxit te. Eruditi maiestatis pri ne. Has cu dolor ullamcorper, eam purto antiopam ex. Mel facilisi praesent consequat te.Cu argumentum suscipiantur has, an porro latine nominati usu, in diam duis novum per. Aperiam admodum expetendis ut est, no nulla molestie complectitur nam. Tale nusquam oportere an mei, his et legere prodesset, quo vero vide luptatum et. Eu porro putent dicunt eam.Ea eos amet appareat. Ex malis movet est, te quo docendi placerat. Mei facete menandri et, ex eam detracto partiendo iracundia. Ea vis dolore consequuntur, munere probatus ea mei, mei oporteat platonem conceptam ea. Cu esse commodo accumsan his, nobis vidisse pro ex.No qui enim homero prodesset, audire integre voluptua ea est. Tota tamquam invenire in duo, duo id minim aliquam epicurei. Phaedrum democritum id per. Cum perpetua percipitur interesset ad, modo platonem mel id. Et pri movet convenire, vix ne cotidieque ullamcorper definitiones.Ea primis verear legimus eum. Sea eu dicunt detraxit, doming graecis eam te. Habeo eripuit bonorum at qui, ea oratio adipisci expetendis nam. Case adhuc integre id cum. Eos fabulas persecuti conceptam cu, vel ei pertinax complectitur, cibo inimicus pertinacia per id.' +
-		'asdf Lorem ipsum dolor sit amet, pri ne torquatos pertinacia repudiandae. Vim nibh inermis ut, has aeterno minimum in, pro reque detraxit te. Eruditi maiestatis pri ne. Has cu dolor ullamcorper, eam purto antiopam ex. Mel facilisi praesent consequat te.Cu argumentum suscipiantur has, an porro latine nominati usu, in diam duis novum per. Aperiam admodum expetendis ut est, no nulla molestie complectitur nam. Tale nusquam oportere an mei, his et legere prodesset, quo vero vide luptatum et. Eu porro putent dicunt eam.Ea eos amet appareat. Ex malis movet est, te quo docendi placerat. Mei facete menandri et, ex eam detracto partiendo iracundia. Ea vis dolore consequuntur, munere probatus ea mei, mei oporteat platonem conceptam ea. Cu esse commodo accumsan his, nobis vidisse pro ex.No qui enim homero prodesset, audire integre voluptua ea est. Tota tamquam invenire in duo, duo id minim aliquam epicurei. Phaedrum democritum id per. Cum perpetua percipitur interesset ad, modo platonem mel id. Et pri movet convenire, vix ne cotidieque ullamcorper definitiones.Ea primis verear legimus eum. Sea eu dicunt detraxit, doming graecis eam te. Habeo eripuit bonorum at qui, ea oratio adipisci expetendis nam. Case adhuc integre id cum. Eos fabulas persecuti conceptam cu, vel ei pertinax complectitur, cibo inimicus pertinacia per id.' +
-		'asdf Lorem ipsum dolor sit amet, pri ne torquatos pertinacia repudiandae. Vim nibh inermis ut, has aeterno minimum in, pro reque detraxit te. Eruditi maiestatis pri ne. Has cu dolor ullamcorper, eam purto antiopam ex. Mel facilisi praesent consequat te.Cu argumentum suscipiantur has, an porro latine nominati usu, in diam duis novum per. Aperiam admodum expetendis ut est, no nulla molestie complectitur nam. Tale nusquam oportere an mei, his et legere prodesset, quo vero vide luptatum et. Eu porro putent dicunt eam.Ea eos amet appareat. Ex malis movet est, te quo docendi placerat. Mei facete menandri et, ex eam detracto partiendo iracundia. Ea vis dolore consequuntur, munere probatus ea mei, mei oporteat platonem conceptam ea. Cu esse commodo accumsan his, nobis vidisse pro ex.No qui enim homero prodesset, audire integre voluptua ea est. Tota tamquam invenire in duo, duo id minim aliquam epicurei. Phaedrum democritum id per. Cum perpetua percipitur interesset ad, modo platonem mel id. Et pri movet convenire, vix ne cotidieque ullamcorper definitiones.Ea primis verear legimus eum. Sea eu dicunt detraxit, doming graecis eam te. Habeo eripuit bonorum at qui, ea oratio adipisci expetendis nam. Case adhuc integre id cum. Eos fabulas persecuti conceptam cu, vel ei pertinax complectitur, cibo inimicus pertinacia per id.' +
-		'asdf Lorem ipsum dolor sit amet, pri ne torquatos pertinacia repudiandae. Vim nibh inermis ut, has aeterno minimum in, pro reque detraxit te. Eruditi maiestatis pri ne. Has cu dolor ullamcorper, eam purto antiopam ex. Mel facilisi praesent consequat te.Cu argumentum suscipiantur has, an porro latine nominati usu, in diam duis novum per. Aperiam admodum expetendis ut est, no nulla molestie complectitur nam. Tale nusquam oportere an mei, his et legere prodesset, quo vero vide luptatum et. Eu porro putent dicunt eam.Ea eos amet appareat. Ex malis movet est, te quo docendi placerat. Mei facete menandri et, ex eam detracto partiendo iracundia. Ea vis dolore consequuntur, munere probatus ea mei, mei oporteat platonem conceptam ea. Cu esse commodo accumsan his, nobis vidisse pro ex.No qui enim homero prodesset, audire integre voluptua ea est. Tota tamquam invenire in duo, duo id minim aliquam epicurei. Phaedrum democritum id per. Cum perpetua percipitur interesset ad, modo platonem mel id. Et pri movet convenire, vix ne cotidieque ullamcorper definitiones.Ea primis verear legimus eum. Sea eu dicunt detraxit, doming graecis eam te. Habeo eripuit bonorum at qui, ea oratio adipisci expetendis nam. Case adhuc integre id cum. Eos fabulas persecuti conceptam cu, vel ei pertinax complectitur, cibo inimicus pertinacia per id.' +
-		'asdf Lorem ipsum dolor sit amet, pri ne torquatos pertinacia repudiandae. Vim nibh inermis ut, has aeterno minimum in, pro reque detraxit te. Eruditi maiestatis pri ne. Has cu dolor ullamcorper, eam purto antiopam ex. Mel facilisi praesent consequat te.Cu argumentum suscipiantur has, an porro latine nominati usu, in diam duis novum per. Aperiam admodum expetendis ut est, no nulla molestie complectitur nam. Tale nusquam oportere an mei, his et legere prodesset, quo vero vide luptatum et. Eu porro putent dicunt eam.Ea eos amet appareat. Ex malis movet est, te quo docendi placerat. Mei facete menandri et, ex eam detracto partiendo iracundia. Ea vis dolore consequuntur, munere probatus ea mei, mei oporteat platonem conceptam ea. Cu esse commodo accumsan his, nobis vidisse pro ex.No qui enim homero prodesset, audire integre voluptua ea est. Tota tamquam invenire in duo, duo id minim aliquam epicurei. Phaedrum democritum id per. Cum perpetua percipitur interesset ad, modo platonem mel id. Et pri movet convenire, vix ne cotidieque ullamcorper definitiones.Ea primis verear legimus eum. Sea eu dicunt detraxit, doming graecis eam te. Habeo eripuit bonorum at qui, ea oratio adipisci expetendis nam. Case adhuc integre id cum. Eos fabulas persecuti conceptam cu, vel ei pertinax complectitur, cibo inimicus pertinacia per id.' +
-		'</div>');
+var meinFrame = function(container) {
+	container.append('<div class="col-xs-9" id="main"> asdf');
+	container.append('</div>');
+}
 
+var after = function(container) {
 	container.append('</div>');
 	container.append('</div>');
-	container.append('</div>');
-
-	// container.append('<div class="container">' +
-	// 	'<div class="row clearfix">' + 
-	// 	'<div class="col-md-2 column" id="myDinner">' + 
-	// 	'asdf Lorem ipsum dolor sit amet, pri ne torquatos pertinacia repudiandae. Vim nibh inermis ut, has aeterno minimum in, pro reque detraxit te. Eruditi maiestatis pri ne. Has cu dolor ullamcorper, eam purto antiopam ex. Mel facilisi praesent consequat te.Cu argumentum suscipiantur has, an porro latine nominati usu, in diam duis novum per. Aperiam admodum expetendis ut est, no nulla molestie complectitur nam. Tale nusquam oportere an mei, his et legere prodesset, quo vero vide luptatum et. Eu porro putent dicunt eam.Ea eos amet appareat. Ex malis movet est, te quo docendi placerat. Mei facete menandri et, ex eam detracto partiendo iracundia. Ea vis dolore consequuntur, munere probatus ea mei, mei oporteat platonem conceptam ea. Cu esse commodo accumsan his, nobis vidisse pro ex.No qui enim homero prodesset, audire integre voluptua ea est. Tota tamquam invenire in duo, duo id minim aliquam epicurei. Phaedrum democritum id per. Cum perpetua percipitur interesset ad, modo platonem mel id. Et pri movet convenire, vix ne cotidieque ullamcorper definitiones.Ea primis verear legimus eum. Sea eu dicunt detraxit, doming graecis eam te. Habeo eripuit bonorum at qui, ea oratio adipisci expetendis nam. Case adhuc integre id cum. Eos fabulas persecuti conceptam cu, vel ei pertinax complectitur, cibo inimicus pertinacia per id.' + 
-	// 	'</div>' + 
-	// 	'<div class="col-md-10 column" id="main">' + 
-	// 	'asdfsada' + 
-	// 	'</div>' + 
-	// 	'</div>' + 
-	// 	'</div>');
 }

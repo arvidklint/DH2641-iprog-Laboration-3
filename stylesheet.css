@@ -66,25 +66,23 @@ body {
 }
 
 #myDinner {
-	border: solid 1px black;
+	border: solid 2px black;
 	border-top: none;
-
+	height: 750px;
 }
 
 #main {
-	border: solid 1px black;
+	border: solid 2px black;
 	border-top: none;
 	border-left: none;
 	overflow-y: scroll;
-	max-height: 200px;
+	height: 750px;
 }
 
-.row-same-height {
-	display: table;
-	width: 100%;
+#selectDish {
+	background-color: orange;
 }
 
-.col-xs-height {
-	display: table-cell;
-	float: none !important;
+#chooser {
+	background-color: gray;
 }
