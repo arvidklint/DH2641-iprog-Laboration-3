@@ -1,5 +1,10 @@
+html {
+	height: 100%;
+}
+
 body {
 	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+	height: 100%;
 }
 
 #header {
@@ -56,3 +61,12 @@ body {
 	box-shadow: 2px 2px 0px;
 }
 
+#myDinner {
+	border: solid 1px black;
+	border-top: none;
+	height: 100%;
+}
+
+#main {
+	border: solid 1px black;
+}
