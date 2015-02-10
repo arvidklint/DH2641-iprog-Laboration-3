@@ -7,6 +7,10 @@ body {
 	height: 100%;
 }
 
+#application {
+	height: 100%;
+}
+
 #header {
 	border: solid 2px;
 	background-color: rgba(200, 200, 200, 0.75);
@@ -64,9 +68,23 @@ body {
 #myDinner {
 	border: solid 1px black;
 	border-top: none;
-	height: 100%;
+
 }
 
 #main {
 	border: solid 1px black;
+	border-top: none;
+	border-left: none;
+	overflow-y: scroll;
+	max-height: 200px;
+}
+
+.row-same-height {
+	display: table;
+	width: 100%;
+}
+
+.col-xs-height {
+	display: table-cell;
+	float: none !important;
 }

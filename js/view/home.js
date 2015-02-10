@@ -13,11 +13,8 @@ var HomeView = function(container, model) {
 		'<span class="title">Homelette</span>' + 
 		'<span class="subtitle">From the best chefs in the world directly into your kitchen</span>' + 
 		'</div>');
-
-	$("#header").css('border', 'solid 2px');
+	
 	$("#header").css('background-color', 'rgba(255, 229, 0, 0.75)');
-	$("#header").css('padding', '10px');
-	$("#header").css('padding-bottom', '20px');
 
 	container.append('<div class="container" id="welcome-box">' +
 		'<p id="welcome-title">A home dinner service</p>' +
