@@ -2,6 +2,13 @@ body {
 	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 }
 
+#front-header {
+	border: solid 2px;
+	background-color: rgba(255, 229, 0, 0.75);
+	padding: 10px;
+	padding-bottom: 20px;
+}
+
 #header {
 	border: solid 2px;
 	background-color: rgba(200, 200, 200, 0.75);
