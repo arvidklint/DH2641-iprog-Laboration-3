@@ -87,3 +87,22 @@ body {
 #chooser {
 	background-color: gray;
 }
+
+.tableSidebar {
+	border: solid 2px black;
+	width: 100%;
+}
+
+.textAlignRight {
+	text-align: right;
+}
+
+.textAlignCenter {
+	text-align: center;
+}
+
+.horizontalLine {
+	padding-left: 0px;
+	margin-left: 0px;
+	border: solid 1px black;
+}
