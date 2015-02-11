@@ -24,7 +24,7 @@ function myDinner() {
 		appString += '<input type="number" value="3"/>';
 	appString += '</div>';
 	appString += '<div>';
-		appString += 
+		appString += '';
 	appString += '</div>';
 	appString += '</div>';
 }
