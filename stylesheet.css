@@ -3,11 +3,11 @@ html {
 }
 
 body {
-	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	height: 100%;
 }
 
 #application {
+	font-family: "Arial Rounded MT Bold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	height: 100%;
 }
 
@@ -21,13 +21,11 @@ body {
 .title {
 	font-size: 32pt;
 	margin-right: 10px;
-	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	text-transform: uppercase;
 }
 
 .subtitle {
 	font-size: 12pt;
-	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	font-style: italic;
 }
 
