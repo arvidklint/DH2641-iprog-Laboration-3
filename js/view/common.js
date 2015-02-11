@@ -20,6 +20,12 @@ function before() {
 function myDinner() {
 	appString += '<div class="col-xs-3" id="myDinner">';
 	appString += 'myDinner';
+	appString += '<div>';
+		appString += '<input type="number" value="3"/>';
+	appString += '</div>';
+	appString += '<div>';
+		appString += 
+	appString += '</div>';
 	appString += '</div>';
 }
 
