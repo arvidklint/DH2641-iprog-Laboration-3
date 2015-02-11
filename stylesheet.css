@@ -6,6 +6,16 @@ body {
 	height: 100%;
 }
 
+h3 {
+	font-size: 24pt;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 18pt;
+	text-transform: uppercase;
+}
+
 #application {
 	font-family: "Arial Rounded MT Bold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	height: 100%;
@@ -78,7 +88,6 @@ body {
 	border: solid 2px black;
 	border-top: none;
 	border-left: none;
-	overflow-y: scroll;
 	height: 750px;
 }
 
@@ -92,6 +101,10 @@ body {
 
 .border {
 	border: solid 2px black;
+}
+
+.border-top {
+	border-top: solid 2px black;
 }
 
 .tableSidebar {
