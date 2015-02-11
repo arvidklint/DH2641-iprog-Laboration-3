@@ -24,10 +24,30 @@ var SelectDish = function(container, model) {
 
 function meinFrame() {
 	appString += '<div class="col-xs-9" id="main">';
-	appString += '<div class="row">';
-	appString += '<div class="col-xs-12">a</div>';
-	appString += '<div class="col-xs-12">b</div>';
-	appString += '</div>';
+	dishChooser();
+	dishList();
 	appString += '</div>';
 }
 
+function dishChooser() {
+	appString += '<div class="row" id="dishChooser">';
+		appString += '<div class="row">';
+			appString += '<div class="col-xs-12" id="dishChooserHeadline">';
+			appString += '<p id="select_dish">Select dish</p>';
+			appString += '</div>';
+		appString += '</div>';
+		appString += '<div class="row">'
+			appString += '<div class="col-xs-5" id="dishChooserSearchFrame">';
+				appString += '<input type="search" placeholder="Enter key words" name="search" id="searchBox"/>';
+				appString += '<button class="btn" id="searchButton">Search</button>';
+			appString += '</div>';
+			appString += '<div class="col-xs-7" id="dishChooserTypeFrame">';
+				appString += 'MENYYYYYYYYYYYYYYY';
+			appString += '</div>';
+		appString += '</div>';
+	appString += '</div>';
+}
+
+function dishList() {
+	appString += '<div class="row"><div class="col-xs-12" id="dishList">b</div></div>';
+}

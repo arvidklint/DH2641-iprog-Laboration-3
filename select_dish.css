@@ -1,0 +1,9 @@
+#dishChooser {
+	background-color: orange;
+	border-bottom: 1px solid black;
+}
+
+#select_dish {
+	text-transform: uppercase;
+	border-bottom: 1px solid black;
+}
