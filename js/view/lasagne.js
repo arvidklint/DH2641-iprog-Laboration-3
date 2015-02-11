@@ -21,12 +21,12 @@ function mainFrame(model) {
 	appString += '</div>';
 }
 
-function showDish() {
+function showDish(model) {
 	appString += '<div class="col-xs-6">';
 		appString += '<h3>';
 			appString += 'Lasagne';
 		appString += '</h3>';
-		appString += '<img src="images/lasagne.jpg" class="img-responsive" alt="Lasagne">'
+		appString += '<img src="images/meatballs-big.jpg" class="img-responsive" alt="Meatballs">'
 		appString += '<p>Lorem ipsum dolor sit amet, in fabulas luptatum definitionem duo, an qui natum tollit posidonium, mel vivendum adipiscing definitiones et. Ad vim sanctus maiestatis ullamcorper, labitur neglegentur qui eu, at est persius electram. His soleat iisque dolorem te. An sed minimum vivendum, sed at accumsan definitionem. Ferri epicurei vim id, melius hendrerit ius eu. Persecuti appellantur ne vis, eam ei viris tempor, ius possit pericula referrentur te.</p>';
 		appString += '<button class="btn" id="backButton">';
 			appString += '<span class="glyphicon glyphicon-chevron-left floatLeft"></span>';
@@ -41,19 +41,27 @@ function showIngredients(model) {
 			appString += 'Ingredients for 4 people';
 		appString += '</h4>';
 		appString += '<table id="ingredientsTable">';
+		var dinner = model.getDish(100);
+		var total = 0;
+		for (i = 0; i < dinner["ingredients"].length; i++) {
+			appString += '<tr>';
+				appString += '<td width="20%">' + dinner["ingredients"][i]["quantity"] + " " + dinner["ingredients"][i]["unit"] + '</td>';
+				appString += '<td width="60%">' + dinner["ingredients"][i]["name"] + '</td>';
+				appString += '<td width="10%">SEK</td>';
+				appString += '<td class="textAlignRight" width="10%">' + dinner["ingredients"][i]["price"].toFixed(2) + '</td>';
+			appString += '</tr>';
+			total += dinner["ingredients"][i]["price"];
+		}
+		appString += '</table>';
 
-		
-			appString += '<tr class="border-top">';
-				appString += '<td>2 tbsp</td>';
-				appString += '<td width="50%">olive oil</td>';
-				appString += '<td>SEK</td>';
-				appString += '<td class="textAlignRight">0.20</td>';
+		appString += '<table width="100%">';
+			appString += '<tr>';
+				appString += '<td width="80%">';
+					appString += '<button class="btn" id="confirmDishButton">Confirm Dish</button>';
+				appString += '</td>';
+				appString += '<td width="10%">SEK</td>';
+				appString += '<td class="textAlignRight" width="10%">' + total.toFixed(2) + '</td>';
 			appString += '</tr>';
 		appString += '</table>';
-		appString += '<div class="center">';
-			appString += '<button class="btn" id="confirmDinnerButton">Confirm Dinner</button>';
-		appString += '</div>';
-
-
 	appString += '</div>';
 }

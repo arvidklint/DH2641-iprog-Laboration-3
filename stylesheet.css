@@ -107,6 +107,10 @@ h3 {
 	border-top: solid 2px black;
 }
 
+.border-bottom {
+	border-bottom: solid 2px black;
+}
+
 .tableSidebar {
 	width: 100%;
 }
