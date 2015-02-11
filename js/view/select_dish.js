@@ -33,26 +33,18 @@ function dishChooser() {
 	appString += '<div class="row" id="dishChooser">';
 		appString += '<div class="row">';
 			appString += '<div class="col-xs-12" id="dishChooserHeadline">';
-			appString += '<p id="select_dish">Select dish</p>';
+				appString += '<p id="select_dish">Select dish</p>';
 			appString += '</div>';
 		appString += '</div>';
 		appString += '<div class="row">'
-			appString += '<div class="col-xs-3" id="dishChooserSearchFrame">';
+			appString += '<div class="col-xs-12" id="dishChooserSearchFrame">';
 				appString += '<input type="search" placeholder="Enter key words" name="search" id="searchBox"/>';
 				appString += '<button class="btn" id="searchButton">Search</button>';
-			appString += '</div>';
-			appString += '<div class="col-xs-9" id="dishChooserTypeFrame">';
-				appString += '<div class="dropdown">';
-					appString += '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">';
-						appString += 'Main';
-						appString += '<span class="caret"></span>';
-					appString += '</button>';
-					appString += '<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">';
-						appString += '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Starter</a></li>';
-						appString += '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Main</a></li>';
-						appString += '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dessert</a></li>';
-					appString += '</ul>';
-				appString += '</div>';
+				appString += '<select id="types">';
+					appString += 	'<option value="Starter">Starter</option>' + 
+									'<option value="Main">Main</option>' + 
+									'<option value="Dessert">Dessert</option>';
+				appString += '</select>';
 			appString += '</div>';
 		appString += '</div>';
 	appString += '</div>';
