@@ -51,5 +51,12 @@ function dishChooser() {
 }
 
 function dishList() {
-	appString += '<div class="row"><div class="col-xs-12" id="dishList">b</div></div>';
+	appString += '<div class="row" id="dishList">';
+		appString += '<div class="col-xs-2">';
+			appString += '<div class="dishThumbFrame">';
+				appString += '<img src="images/toast.jpg" class="dishThumb"/>';
+				appString += '<div class="dishTitle">Jag</div>';
+			appString += '</div>';
+		appString += '</div>';
+	appString += '</div>';
 }
