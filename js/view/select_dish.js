@@ -9,7 +9,7 @@ var SelectDish = function(container, model) {
 	before();
 
 	myDinner();
-	meinFrame();
+	meinFrame(model);
 
 	after(container);
 }
@@ -22,10 +22,10 @@ var SelectDish = function(container, model) {
 // 	container.append('</div>');
 // }
 
-function meinFrame() {
+function meinFrame(model) {
 	appString += '<div class="col-xs-9" id="main">';
 	dishChooser();
-	dishList();
+	dishList(model);
 	appString += '</div>';
 }
 
@@ -50,13 +50,25 @@ function dishChooser() {
 	appString += '</div>';
 }
 
-function dishList() {
+function dishList(model) {
 	appString += '<div class="row" id="dishList">';
-		appString += '<div class="col-xs-2">';
+	foundDishes = model.getAllDishes("starter");
+	for (i = 0; i < foundDishes.length; i++) {
+		appString += '<div class="col-md-3 col-sm-4 col-xs-6 dishObjectFrame">';
 			appString += '<div class="dishThumbFrame">';
-				appString += '<img src="images/toast.jpg" class="dishThumb"/>';
-				appString += '<div class="dishTitle">Jag</div>';
+				appString += '<div>';
+					appString += '<img src="images/' + foundDishes[i]["image"] + '" class="dishThumb"/>';
+				appString += '</div>';
+				appString += '<div class="dishTitle">';
+					appString += foundDishes[i]["name"];
+				appString += '</div>';
+			appString += '</div>';
+			appString += '<div class="dishDescription">';
+				appString += foundDishes[i]["description"];
 			appString += '</div>';
 		appString += '</div>';
+	}
+
 	appString += '</div>';
+
 }
