@@ -25,3 +25,6 @@ function secondBar(container, model) {
 	appString += '</div>';
 }
 
+function dishList(container, model) {
+	//
+}
