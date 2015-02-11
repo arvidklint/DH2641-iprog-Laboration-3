@@ -17,7 +17,7 @@ h3 {
 }
 
 #application {
-	font-family: "Arial Rounded MT Bold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 	height: 100%;
 }
 
@@ -71,7 +71,7 @@ h3 {
 .btn {
 	background-color: orange;
 	border: solid 1px black;
-	box-shadow: 2px 2px 0px;
+	box-shadow: 1px 1px 2px;
 	padding: 3px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -149,3 +149,5 @@ h3 {
 td {
 	padding: 15px;
 }
+
+
