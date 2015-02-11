@@ -52,7 +52,7 @@ function dishChooser() {
 
 function dishList(model) {
 	appString += '<div class="row" id="dishList">';
-	foundDishes = model.getAllDishes("starter");
+	foundDishes = model.getAllDishes("main dish");
 	for (i = 0; i < foundDishes.length; i++) {
 		appString += '<div class="col-md-3 col-sm-4 col-xs-6 dishObjectFrame">';
 			appString += '<div class="dishThumbFrame">';

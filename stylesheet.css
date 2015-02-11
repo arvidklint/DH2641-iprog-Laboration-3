@@ -137,4 +137,17 @@ td {
 	padding: 15px;
 }
 
+.myDinnerSummaryFrame {
+	background-color: #FEE387;
+	border: 2px solid black;
+	border-top: none;
+	padding: 20px;
+}
 
+#myDinnerSummary {
+	font-size: 18px;
+}
+
+#myDinnerSummaryBackButtonFrame {
+	text-align: right;
+}

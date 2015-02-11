@@ -298,10 +298,10 @@ var DinnerModel = function() {
 			}]
 		},{
 		'id':102,
-		'name':'MD 4',
+		'name':'Lasagna',
 		'type':'main dish',
-		'image':'meatballs.jpg',
-		'description':"Here is how you make it... Lore ipsum...",
+		'image':'lasagne.jpg',
+		'description':"There are several things that differentiate Lasagna Bolognese from the Southern Italian style Lasagna that is more familiar to Americans. The most noticeable differences are the use of Béchamel Sauce instead of ricotta cheese, and the absence of mozzarella–only Parmagianno-Reggiano cheese is sprinkled on each layer–which results in a more delicate lasagna.",
 		'ingredients':[{ 
 			'name':'ingredient 1',
 			'quantity':1,
