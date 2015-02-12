@@ -17,7 +17,15 @@ function before() {
 	appString += '<div class="row">';
 }
 
-function myDinner() {
+function myDinner(model) {
+	model.addDishToMenu(1);
+	model.addDishToMenu(100);
+	model.addDishToMenu(200);
+
+	menu = model.getFullMenu();
+
+	model.setNumberOfGuests(4);
+
 	appString += '<div class="col-xs-3" id="myDinner">';
 		appString += 'My Dinner';
 		appString += '<div>';
@@ -34,18 +42,20 @@ function myDinner() {
 			appString += '</div>';
 		appString += '</div>';
 		appString += '<table class="tableSidebar">';
-			appString += '<tr class="border">';
-				appString += '<td>4</td>';
-				appString += '<td class="textAlignCenter">Lasagne</td>';
-				appString += '<td class="textAlignRight">77.20</td>';
-			appString += '</tr>';
+			for (key in menu) {
+				appString += '<tr class="border">';
+					appString += '<td>' + model.getNumberOfGuests() + '</td>';
+					appString += '<td class="textAlignCenter">' + menu[key]["name"] + '</td>';
+					appString += '<td class="textAlignRight">' + (model.getDishPrice(menu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + '</td>';
+				appString += '</tr>';
+			}
 			appString += '<tr>';
 				appString += '<td></td>';
 				appString += '<td class="textAlignCenter">Pending</td>';
 				appString += '<td class="textAlignRight">0.00</td>';
 			appString += '</tr>';
 			appString += '<tr>';
-				appString += '<td class="textAlignRight borderTop" colspan="3">SEK 77.20</td>';
+				appString += '<td class="textAlignRight borderTop" colspan="3">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests()).toFixed(2) + '</td>';
 			appString += '</tr>';
 		appString += '</table>';
 		appString += '<div class="center">';

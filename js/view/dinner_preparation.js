@@ -31,11 +31,11 @@ function mainFrame(model){
 }
 
 function showDinnerPrep(dish) {
-	appString += '<div class="col-xs-2">';
+	appString += '<div class="col-xs-4 col-md-3">';
 		appString += '<img src="images/' + dish["image"] + '" class="img-responsive dinnerPrepThumbnail" alt="Meatballs">';
 	appString += '</div>';
 
-	appString += '<div class="col-xs-4">';
+	appString += '<div class="col-xs-8 col-md-4">';
 		appString += '<h3>';
 			appString += dish["name"];
 		appString += '</h3>';
@@ -45,7 +45,7 @@ function showDinnerPrep(dish) {
 		appString += '</p>';
 	appString += '</div>';
 
-	appString += '<div class="col-xs-5">';
+	appString += '<div class="col-xs-12 col-md-5">';
 		appString += '<h4>';
 			appString += 'PREPARATION';
 		appString += '</h4>';

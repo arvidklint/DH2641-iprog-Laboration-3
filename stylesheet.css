@@ -9,11 +9,15 @@ body {
 h3 {
 	font-size: 24pt;
 	text-transform: uppercase;
+	padding-top: 10pt;
+	padding-bottom: 6pt;
 }
 
-h3 {
+h4 {
 	font-size: 18pt;
 	text-transform: uppercase;
+	padding-top: 24pt;
+	padding-bottom: 6pt;
 }
 
 #application {
@@ -109,6 +113,14 @@ h3 {
 
 .border-bottom {
 	border-bottom: solid 2px black;
+}
+
+.border-right {
+	border-right: solid 2px black;
+}
+
+.border-left {
+	border-left: solid 2px black;
 }
 
 .tableSidebar {
