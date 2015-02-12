@@ -202,3 +202,13 @@ td {
 #dishname {
 	background: #D6D6D6;
 }
+
+td {
+	padding: 5px;
+}
+
+.removeButton {
+	background: none;
+	border: none;
+	color: #6B0000;
+}
