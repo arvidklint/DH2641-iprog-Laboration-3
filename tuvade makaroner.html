@@ -1,0 +1,788 @@
+﻿
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="sv" class="no-js ie6 lt-ie9"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="sv" class="no-js ie7 lt-ie9"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="sv" class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!-->
+
+<html lang="sv" class="no-js">
+<!--<![endif]-->
+	<head><meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"beacon-6.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"d07ecc973d","applicationID":"1042448","transactionName":"NFQAZRRTWRUFURUPXg0eI2I2HUADBh0AFkEQHhBUBVtHAxcdEQdWBkJNQwNRXhYBQgABVE1QEUEe","queueTime":31,"applicationTime":162,"ttGuid":"FCB81C3C1D07A397","agent":"js-agent.newrelic.com/nr-515.min.js"}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQ4GWVNXGwIAUFNWAwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:19,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:19,2:20,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:20,2:19,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:20,2:19,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:20,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&u&&u.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=l.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,u=c.document,f="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-515.min.js"},l=e.exports={offset:i(),origin:p,features:{}};u[f]?(u[f]("DOMContentLoaded",o,!1),c[f]("load",n,!1)):(u[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:18,handle:"D5DuLP"}],18:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],19:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],20:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:19,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script><title>
+	Stuvade makaroner - Recept - Arla
+</title><meta name="keywords" content="snabba,budget,pasta,vardag,huvudrätt,koka" />
+<meta name="description" content="Stuvade makaroner är en klassiker - det finns inget bättre tillbehör till falukorven! Stuvade makaroner passar även bra till köttbullar och stekt fläsk." />
+<meta name="robots" content="all" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="openGraphMetaTags_title" property="og:title" content="Stuvade makaroner" />
+<meta id="openGraphMetaTags_type" property="og:type" content="article" />
+<meta id="openGraphMetaTags_url" property="og:url" content="http://www.arla.se/recept/stuvade-makaroner/" />
+<meta id="openGraphMetaTags_image" property="og:image" content="http://cdn.arla.se/Files/3153926565/b92925fc-e942-4450-ae91-184ee53f2238.jpg?preset=ThumbLarge" />
+<meta id="openGraphMetaTags_siteName" property="og:site_name" content="Arla" />
+<meta id="openGraphMetaTags_description" property="og:description" content="Stuvade makaroner är en klassiker - det finns inget bättre tillbehör till falukorven! Stuvade makaroner passar även bra till köttbullar och stekt fläsk." /><link rel="canonical" href="http://www.arla.se/recept/stuvade-makaroner/" /><link media="all" rel="Stylesheet" type="text/css" href="/Web/Core/UI/StyleSheetOptimizer.ashx?key=styleSheet&amp;hash=2A4BE76D0A1640F687ED2A0E307A2CE7" />
+
+
+<link media="all" rel="Stylesheet" type="text/css" href="/background.css?pageid=8&amp;pagelanguage=sv&amp;timestamp=635591860321230000&amp;isstaticresource=true" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="arla-touch-icon-144x144-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/arla-touch-icon-144x144-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/arla-touch-icon-114x114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/arla-touch-icon-72x72-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="/arla-touch-icon-57x57-precomposed.png" />
+<link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+		<!--[if lt IE 9]>
+				<script src="/Web/Core/UI/Js/core-html5shiv-printshiv.js"></script>
+			<![endif]-->
+		<script>		(function (H) { H.className = H.className.replace(/\bno-js\b/, 'js'); })(document.documentElement)</script>
+		</head>
+	<body class="recipe">
+		<script>var digitalData = digitalData || []; digitalData.push({'recipeName':'Stuvade makaroner','recipeMealType':'Huvudrätt','recipeMealOrBaking':'Matrecept','recipeArlaProducts':'Arla® mjölk,Arla Köket® matlagningsgrädde,','recipeMainIngredient':'Okategoriserat','breadcrumb': ['Recept & mat','Stuvade makaroner'],'pageID':'27','pageName':'(Recept)','primaryCategory':'Recept & mat','pageType':'RecipePageType','language':'sv','geoRegion':'SE','loginStatus':'False','sysEnv': 'Responsive','pageTitle':'Stuvade makaroner - Recept','destinationURL':'http://www.arla.se/Web/Apps/Recipes/Pages/RecipePage.aspx?recipeId=3153926565&id=27&epslanguage=sv','destinationPath':'/Web/Apps/Recipes/Pages/RecipePage.aspx?recipeId=3153926565&id=27&epslanguage=sv','hostName':'www.arla.se','referringURL':'https://www.google.se/'});</script>
+		
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WJP4MC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','digitalData','GTM-WJP4MC');</script>
+<!-- End Google Tag Manager -->
+
+		<form method="post" action="/recept/stuvade-makaroner/" id="form" novalidate="">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTg5NTg2NTMwZBgJBW9jdGwwMCRjdGwwMCRjdGwwMCRib2R5UmVnaW9uJHBhZ2VSZWdpb24kbWFpblJlZ2lvbiRpbmdyZWRpZW50cyRpbmdyZWRpZW50R3JvdXBzUmVwZWF0ZXIkY3RsMDAkY3RsMDAkaW5ncmVkaWVudHMPFCsADmRkZGRkZGQ8KwAFAAIFZGRkZgL/////D2QFlgFjdGwwMCRjdGwwMCRjdGwwMCRib2R5UmVnaW9uJHBhZ2VSZWdpb24kbWFpblJlZ2lvbiR1c2VyQ29udHJvbEluamVjdGlvbnNCZWxvd1JlY2lwZUluZm9ybWF0aW9uJGN0bDAwJGluZ3JlZGllbnRzJGluY2x1ZGVkUmVjaXBlcyRpbmNsdWRlZFJlY2lwZXMkaXRlbXMPZ2QFTmN0bDAwJGN0bDAwJGN0bDAwJGJvZHlSZWdpb24kcGFnZVJlZ2lvbiRhc2lkZVJlZ2lvbiRjdGwwMyRzaW1pbGFyUmVjaXBlcyRpdGVtcw8UKwAOZGRkZGRkZDwrAAQAAgRkZGRmAv////8PZAWhAWN0bDAwJGN0bDAwJGN0bDAwJGJvZHlSZWdpb24kcGFnZVJlZ2lvbiRtYWluUmVnaW9uJHVzZXJDb250cm9sSW5qZWN0aW9uc0JlbG93UmVjaXBlSW5mb3JtYXRpb24kY3RsMDAkaW5ncmVkaWVudHMkaW5ncmVkaWVudEdyb3Vwc1JlcGVhdGVyJGN0bDAwJGN0bDAwJGluZ3JlZGllbnRzDxQrAA5kZGRkZGRkPCsABQACBWRkZGYC/////w9kBU5jdGwwMCRjdGwwMCRjdGwwMCRib2R5UmVnaW9uJHBhZ2VSZWdpb24kYXNpZGVSZWdpb24kY3RsMDYkcmVsYXRpbmdUaGVtZXMkaXRlbXMPFCsADmRkZGRkZGQUKwABZAIBZGRkZgL/////D2QFNGN0bDAwJGN0bDAwJGN0bDAwJGJvZHlSZWdpb24kY3RsMDYkY3RsMTIkbGlua3MkbGlua3MPZ2QFU2N0bDAwJGN0bDAwJGN0bDAwJGJvZHlSZWdpb24kcGFnZVJlZ2lvbiRhc2lkZVJlZ2lvbiRjdGwwMiRyZWNvbW1lbmRlZFByb2R1Y3RzJGl0ZW1zDxQrAA5kZGRkZGRkFCsAAmRkAgJkZGRmAv////8PZAU/Y3RsMDAkY3RsMDAkY3RsMDAkYm9keVJlZ2lvbiRwYWdlUmVnaW9uJGFzaWRlUmVnaW9uJGN0bDA0JGxpbmtzDxQrAA5kZGRkZGRkFCsAAmRkAgJkZGRmAv////8PZAVkY3RsMDAkY3RsMDAkY3RsMDAkYm9keVJlZ2lvbiRwYWdlUmVnaW9uJG1haW5SZWdpb24kaW5ncmVkaWVudHMkaW5jbHVkZWRSZWNpcGVzJGluY2x1ZGVkUmVjaXBlcyRpdGVtcw9nZJhWv6kSGB/UenTVeKOhyq6+NUPa5G1T3GbuIIaaQ7ds" />
+</div>
+
+			
+	<header itemscope="" itemtype="http://schema.org/Organization" role="banner">
+		
+<a href="/" itemprop="url" class="logo">
+	
+    <img itemprop="logo" src="/Web/Core/UI/Images/Content/arla-logo.svg" />
+</a>
+		
+    </header>
+	
+<nav role="navigation" class="main-navholder">
+	
+	<ul id="main-nav" class="main-nav"><li class="first-item"><a class=" " href="/">Start</a></li><li class="selected"><a class=" selected" href="/recept/">Recept &amp; mat</a><ul><li class="first-item"><a class=" " href="/recept/teman/">Alla teman</a></li><li><a class=" " href="http://www.arla.se/sok/?query=hidden:*&amp;sn=dsi&amp;dsinh=18&amp;dsifv=5&amp;displaynew=true" target="_top">Nya recept</a></li><li><a class=" " href="/recept/fakta-tips-och-ravaror/">Fakta tips och r&#229;varor</a></li><li><a class=" " href="/recept/veckomatsedlar/dagens/">Veckomatsedlar</a></li><li><a class=" " href="/recept/arla-shop/">Arla shop</a></li><li class="last-item"><a class=" " href="/recept/om-arla-koket/">Om Arla K&#246;ket</a></li></ul></li><li><a class=" " href="/vara-produkter/vara-produkter/">V&#229;ra produkter</a><ul><li class="first-item"><a class=" " href="/vara-produkter/vara-produkter/">V&#229;ra produkter</a></li><li><a class=" " href="/vara-produkter/produktgrupper/">Produktgrupper</a></li><li><a class=" " href="/vara-produkter/ekologiskt/">Ekologiska produkter</a></li><li><a class=" " href="/vara-produkter/laktosfritt/">Laktosfria produkter</a></li><li class="last-item"><a class=" " href="/vara-produkter/vara-forpackningar/">V&#229;ra f&#246;rpackningar</a></li></ul></li><li><a class=" " href="/evenemang/">Aktuellt</a><ul><li class="first-item"><a class=" " href="/evenemang/arla-100-ar/">Arla 100 &#229;r</a></li><li><a class=" " href="/evenemang/guldko/">Arla Guldko</a></li><li><a class=" " href="/evenemang/arlakadabra/">Arlakadabra</a></li><li><a class=" " href="/evenemang/forskola1/">F&#246;rskola</a></li><li><a class=" " href="/evenemang/kampanjer-och-tavlingar/">Kampanjer/t&#228;vlingar</a></li><li><a class=" " href="/evenemang/aktuella-mjolkbaksidor-januari/">Mj&#246;lkbaksidor</a></li><li><a class=" " href="/evenemang/nya-produkter/">Nya produkter</a></li><li class="last-item"><a class=" " href="/evenemang/sponsring-och-samarbeten/">Sponsring/event</a></li></ul></li><li><a class=" " href="/halsa/">H&#228;lsa</a><ul><li class="first-item"><a class=" " href="/halsa/forenklad-vardag/">F&#246;renklad vardag</a></li><li><a class=" " href="/halsa/mat-och-traning/">Kost och tr&#228;ning</a></li><li><a class=" " href="/halsa/kost-och-kropp/">Kost och kropp</a></li><li><a class=" " href="/halsa/bantare/">Vikt och diet</a></li><li class="last-item"><a class=" " href="/halsa/for-alla/">Nyttig mat</a></li></ul></li><li><a class=" " href="/om-arla/">Om Arla</a><ul><li class="first-item"><a class=" " href="/om-arla/fakta/">Fakta om Arla</a></li><li><a class=" " href="/om-arla/arlas-historia/">Arlas historia</a></li><li><a class=" " href="/om-arla/minior/">Minior</a></li><li><a class=" " href="/om-arla/miljo-socialt-ansvar/">Milj&#246; &amp; socialt ansvar</a></li><li><a class=" " href="/om-arla/korna/">Korna &amp; g&#229;rden</a></li><li><a class=" " href="/om-arla/ekologiskt/">Ekologiskt</a></li><li><a class=" " href="http://nyheter.arla.se/" target="_blank">Nyheter &amp; press</a></li><li><a class=" " href="/om-arla/kontakta-oss/">Kontakta oss</a></li><li class="last-item"><a class=" " href="http://www.arlafoods.se/jobb/" target="_blank">Jobb &amp; Karri&#228;r</a></li></ul></li><li class="last-item"><a class="play-nav-item " href="/arla-play/">Arla Play</a></li></ul>
+	
+</nav>
+	<div class="search">
+		
+		
+
+<div class="search-form" role="search">
+	<label for="ctl00$ctl00$ctl00$bodyRegion$ctl07$queryInput">S&#246;k</label>
+	<input name="ctl00$ctl00$ctl00$bodyRegion$ctl07$queryInput" id="queryInput" class="search-input" type="search" placeholder="Sök recept, produkt eller annat innehåll" />
+	<button id="searchSubmit" class="search-btn" type="submit" name="ctl00$ctl00$ctl00$bodyRegion$ctl07$searchSubmit">S&#246;k</button>
+</div>
+<a href="/sok/?query=hidden:*&amp;sn=dsi&amp;dsinh=18&amp;dsifv=5&amp;sfl=true" class="search-link"><span>Hitta matinspirationen med vår</span> receptfiltrering</a>
+		
+		
+    </div>
+	
+<ul id="breadcrumbs" class="breadcrumbs">
+	
+			<li>
+				<a href="/recept/">Recept &amp; mat</a>
+				/
+			</li>
+		
+			<li>
+				Stuvade makaroner
+				
+			</li>
+		
+</ul>
+
+	
+	
+	
+	<article id="main-content" class="main" role="main" itemscope="" itemtype="http://schema.org/Recipe">
+		<div class="media-area recipe-media-area">
+			
+<div class="recipe-favorite-wrapper">
+	<a href="/recept/stuvade-makaroner/?favoriteRecipeId=3153926565&amp;action=add" class="recipe-favorite add-favorite" rel="nofollow">add to favorites</a>
+	
+</div>
+			<div class="media">
+				<img src="http://cdn.arla.se/Files/3153926565/b92925fc-e942-4450-ae91-184ee53f2238.jpg?preset=Main" itemprop="image" alt="Stuvade makaroner" />
+				<div class="opinion">
+					<fieldset class="rating">
+	<div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+		<meta itemprop="ratingValue" content="4" />
+		<meta itemprop="ratingCount" content="482" />
+	</div>
+	<legend>Betyg <span>(482 st)</span></legend>
+	<label id="labelRate1" for="rate1" class="full" data-org-state="full">
+		Ge betyg 1
+		<input id="rate1" name="rate1" type="radio" />
+	</label>
+	<label id="labelRate2" for="rate2" class="full" data-org-state="full">
+		Ge betyg 2
+		<input id="rate2" name="rate2" type="radio" />
+	</label>
+	<label id="labelRate3" for="rate3" class="full" data-org-state="full">
+		Ge betyg 3
+		<input id="rate3" name="rate3" type="radio" />
+	</label>
+	<label id="labelRate4" for="rate4" class="full" data-org-state="full">
+		Ge betyg 4
+		<input id="rate4" name="rate4" type="radio" />
+	</label>
+	<label id="labelRate5" for="rate5">
+		Ge betyg 5
+		<input id="rate5" name="rate5" type="radio" />
+	</label>
+
+	<button id="rateSubmitButton" data-proxy-url="/Web/Apps/Recipes/Controls/RecipeRating/RecipeRatingProxy.aspx?recipeId=3153926565" type="submit" name="ctl00$ctl00$ctl00$bodyRegion$pageRegion$mainRegion$ctl00$rateSubmitButton">R&#246;sta</button>
+    
+</fieldset>
+
+<p class="your-rating">
+	Mitt betyg:<span></span>
+</p>
+
+					
+					
+				</div>
+			</div>
+		</div>
+		<h1 itemprop="name" data-recipe-id="3153926565" data-language="sv">Stuvade makaroner</h1>
+		<p>Stuvade makaroner är en klassiker - det finns inget bättre tillbehör till falukorven! Stuvade makaroner passar även bra till köttbullar och stekt fläsk.</p>
+		<div class="pull-left">
+			
+
+<fieldset id="fieldSet" class="servings-selector">
+	<legend>Antal portioner</legend>
+	<div class="select">
+		<select name="ctl00$ctl00$ctl00$bodyRegion$pageRegion$mainRegion$ingredients$servingsSelector$dropDown" id="dropDown" class="submit-on-change">
+	<option value="2">2 port</option>
+	<option selected="selected" value="4">4 port</option>
+	<option value="6">6 port</option>
+	<option value="8">8 port</option>
+
+</select>
+	</div>
+	<button id="servingsSelectorSubmitButton" type="submit" name="ctl00$ctl00$ctl00$bodyRegion$pageRegion$mainRegion$ingredients$servingsSelector$servingsSelectorSubmitButton">V&#228;lj</button>
+</fieldset>
+
+
+
+<div class="ingredients">
+	<h2>Ingredienser</h2>
+	
+			
+			
+		<ul>
+			
+		<li itemprop="ingredients">5 dl makaroner</li>
+	
+		<li itemprop="ingredients">2 msk vetemjöl</li>
+	
+		<li itemprop="ingredients">4 dl Arla<sup>®</sup> mjölk</li>
+	
+		<li itemprop="ingredients">1 dl Arla Köket<sup>®</sup> matlagningsgrädde</li>
+	
+		<li itemprop="ingredients">salt och peppar</li>
+	
+		</ul>
+	
+		
+	
+</div>
+			
+
+<div class="instruction" itemprop="recipeInstructions">
+    <h2>G&#246;r s&#229; h&#228;r:</h2>
+    
+            
+            <p>Koka makaronerna enligt anvisning på förpackningen. Slå av vattnet i ett durkslag och häll tillbaka makaronerna i kastrullen. Rör ner vetemjölet. Tillsätt mjölk och grädde. Koka under omrörning 3-5 min. Smaka av med salt och peppar.</p>
+        
+</div>
+			
+
+<div class="recommended-sides">
+	<h2>Serveringsf&#246;rslag:</h2>
+	<p>Servera till stekt falukorv och en tomatsallad.</p>
+	
+</div>
+			
+		</div>
+	    
+        <div class="recipe-source-holder">
+            <small class="recipe-source">
+			    Källa:
+			    <span itemprop="author">Arla Köket<sup>®</sup> matlagningsgrädde 2007</span>
+		    </small>
+        </div>
+		<div class="additional-info">
+			<div class="recipe-info">
+				
+
+<div class="nutrition-wrapper">
+	<div id="nutritionalInformation" class="nutrition" itemprop="nutrition" itemscope="" itemtype="http://schema.org/NutritionInformation">
+		<h3 id="nutritionValuesHeading" itemprop="servingSize">N&#228;ringsv&#228;rden, per portion exklusive tillbeh&#246;r</h3>
+		<ul>
+			<li id="energyInfo" class="energyInfo">
+				 <span id="energyInfoValue" itemprop="calories">315 kcal</span>
+			</li>
+			
+			
+			<li id="proteinInfo" class="proteinInfo">
+				Protein: <span id="proteinInfoValue" itemprop="proteinContent">12 g</span>
+			</li>
+			<li id="carbohydratesInfo" class="carbohydratesInfo">
+				Kolhydrater: <span id="carbohydratesInfoValue" itemprop="carbohydrateContent">49 g</span>
+			</li>
+			<li id="fatInfo" class="fatInfo" itemprop="fatContent">
+				Fett: <span id="fatInfoValue" itemprop="fatContent">8 g</span>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+				
+	            
+			</div>
+            <div class="page-controls"></div>
+		</div>
+		
+		
+
+<div class="mathem media-area">
+	<div class="mathem-intro">
+		<h2>K&#246;p hem ingredienserna direkt</h2>
+		<p>Du som bor i Stockholm, G&#246;teborg, Malm&#246;, Uppsala, Helsingborg eller Lund kan nu f&#229; ingredienserna i receptet levererade direkt till d&#246;rren.</p>
+		<img src="/Web/Apps/Mathem/UI/Images/Content/arla-logo-small.png" alt="Arla logo" class="mathem-arla-logo" /><img src="/Web/Apps/Mathem/UI/Images/Content/mathem-logo-small.png" alt="Mathem logo" class="mathem-mathem-logo" />
+	</div>
+	<div class="mathem-content">
+		<div class="mathem-info">
+			<p><img src="/Global/mathem.png" alt="" width="630" height="276" /></p>
+<p>Vi erbjuder tillsammans med MatHem hemleverans av allt du behöver för  att laga våra recept. För att ta del av tjänsten behöver MatHem dina  kontakt- och leveransuppgifter och att du blir medlem på MatHem.se.</p>
+<h4>Så här funkar det</h4>
+<ol>
+<li>Klicka på knappen Köp ingredienser. MatHem.se öppnas som en ny flik i din webbläsare.</li>
+<li>Se över din order och lägg i varukorgen, gå sedan tillbaka till fliken med arla.se om du vill köpa varor till fler recept. </li>
+<li>Komplettera din order på MatHem.se med annat du behöver, t ex frukostprodukter&nbsp;</li>
+<li>Logga in på MatHem.se eller registrera nytt medlemskap&nbsp;</li>
+<li>Välj när du vill ha leverans och slutför köpet</li>
+</ol>
+<p>Om du är en av de 100 första som beställer via ett recept på   arla.se bjuder vi på Arla Kökets kokbok Vinter. Du får också 150 kr rabatt på   hela ditt köp från MatHem.</p>
+		</div>
+		<div class="mathem-order-section">
+			<h3>Best&#228;ll hem ingredienserna till ytterd&#246;rren via Mathem</h3>
+			
+
+
+<div class="ingredients">
+	<h4>Ingredienser</h4>
+	
+			
+			
+		<ul>
+			
+		<li>5 dl makaroner</li>
+	
+		<li>2 msk vetemjöl</li>
+	
+		<li>4 dl Arla<sup>®</sup> mjölk</li>
+	
+		<li>1 dl Arla Köket<sup>®</sup> matlagningsgrädde</li>
+	
+		<li>salt och peppar</li>
+	
+		</ul>
+	
+		
+	
+</div>
+			<div class="mathem-order">
+				
+
+<div class="check-postal">
+	<h4>Kan jag best&#228;lla?</h4>
+	<label class="visuallyhidden" for="postalCodeField">Postnummer</label>
+	<input name="ctl00$ctl00$ctl00$bodyRegion$pageRegion$mainRegion$userControlInjectionsBelowRecipeInformation$ctl00$ctl00$postalCodeField" type="text" id="postalCodeField" pattern="\d*" novalidate="" placeholder="Postnummer" />
+	<button id="postalCodeSubmitButton" type="submit" name="ctl00$ctl00$ctl00$bodyRegion$pageRegion$mainRegion$userControlInjectionsBelowRecipeInformation$ctl00$ctl00$postalCodeSubmitButton">S&#246;k</button>
+
+	
+
+</div>
+				<ul>
+</ul>
+<ul>
+<li>Du behöver bli medlem på MatHem</li>
+<li>Fraktkostnad tillkommer</li>
+<li>Betala mot faktura via Klarna eller med kort</li>
+</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</article>
+
+	
+	
+	<aside class="related">
+		
+		
+		
+<section class="promoted-products">
+	<h3>rekommenderade produkter</h3>
+	
+		<ul class="thumbnail-teaser narrow-thumbnail-teaser">
+			
+		<li>
+			<a href="/vara-produkter/produkt/?productid=7310865000194">
+				<figure>
+					<img src="http://www.mediabanken.se/WS/Arla/Arla.se/v140/Image.aspx?opvno=2dkf4br4wcl4wxuv3jke5jibvq000000&amp;itype=Jpg150p" alt="Arla Ko® Standardmjölk" />
+					<figcaption>Arla Ko<sup>®</sup> Standardmjölk</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/vara-produkter/produkt/?productid=7310865066435">
+				<figure>
+					<img src="http://www.mediabanken.se/WS/Arla/Arla.se/v140/Image.aspx?opvno=lzlalws6o3r3aln5z44huph6tm000000&amp;itype=Jpg150p" alt="Arla Köket® matlagningsgrädde 15%" />
+					<figcaption>Arla Köket<sup>®</sup> matlagningsgrädde 15%</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		</ul>
+	
+
+</section>
+		
+
+<section class="similar-recipes">
+	<h3>Andra goda f&#246;rslag</h3>
+	
+		<ul class="thumbnail-teaser narrow-thumbnail-teaser">
+			
+		<li>
+			<a href="http://www.arla.se/recept/graddig-pasta/">
+				<figure>
+					<img src="http://cdn.arla.se/Files/4014332349/266ee6ea-afee-48b6-bc95-28addede07b9.jpg?preset=ThumbSmall" alt="Gräddig pasta" />
+					<figcaption>Gr&#228;ddig pasta</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://www.arla.se/recept/tomatsoppa-med-paprika-och-pasta/">
+				<figure>
+					<img src="http://cdn.arla.se/Files/3315336585/0eb22746-2cab-432f-99f3-48d33b9f9114.jpg?preset=ThumbSmall" alt="Tomatsoppa med paprika och pasta" />
+					<figcaption>Tomatsoppa med paprika och pasta</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://www.arla.se/recept/pasta-pa-bondens-vis/">
+				<figure>
+					<img src="http://cdn.arla.se/Files/3462414133/305e4c48-b5a2-4cd4-87ed-327d029fd1ce.jpg?preset=ThumbSmall" alt="Pasta på bondens vis" />
+					<figcaption>Pasta p&#229; bondens vis</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://www.arla.se/recept/pasta-damore/">
+				<figure>
+					<img src="http://cdn.arla.se/Files/4238187688/835328a3-6fe0-4deb-811a-aac427127ae6.jpg?preset=ThumbSmall" alt="Pasta d&#39;amore" />
+					<figcaption>Pasta d&#39;amore</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		</ul>
+	
+
+</section>
+		
+<section class="tags">
+	<h3 id="heading">Fler recept med</h3>
+	
+			<ul>
+				
+			<li>
+				<a href="/sok/?query=hidden:(meta:category:ingrediens;arla--mj%c3%b6lk)&amp;sn=dsi&amp;dsinh=18&amp;dsifv=5" title="Arla® mjölk">Arla<sup>®</sup> mjölk</a>
+			</li>
+		
+			<li>
+				<a href="/sok/?query=hidden:(meta:category:ingrediens;arla-k%c3%b6ket--matlagningsgr%c3%a4dde)&amp;sn=dsi&amp;dsinh=18&amp;dsifv=5" title="Arla Köket® matlagningsgrädde">Arla Köket<sup>®</sup> matlagningsgrädde</a>
+			</li>
+		
+			</ul>
+		
+</section>
+		
+<section class="related-themes">
+	<h3>Finns i teman</h3>
+	
+		<ul class="thumbnail-teaser narrow-thumbnail-teaser">
+			
+		<li>
+			<a href="/recept/teman/falukorv1/">
+				<figure>
+					<img src="/Global/Mat%20och%20recept/Teman/Temapuffar%20290_181/falukorv_puff.jpg" />
+					<figcaption>Falukorv</figcaption>
+				</figure>
+			</a>
+		</li>
+	
+		</ul>
+	
+
+</section>
+	</aside>
+	
+
+	
+
+	
+
+<section class="arla-share clearfix hidden">
+	<div class="icon-share-link pull-right">Dela</div>
+	<div class="share-links hidden">
+		<div class="share-links-content">
+		<h3 class="share-links-title">Dela</h3>
+		
+			<ul>
+			
+				<li>
+					<a href="http://www.facebook.com/share.php?u=http%3a%2f%2fwww.arla.se%2frecept%2fstuvade-makaroner%2f" title="Dela knapp">
+						<figure>
+							<img src="/Global/Social/ShareIcons/facebook.png" alt="Dela knapp" />
+							<figcaption class="visuallyhidden">Dela knapp</figcaption>
+						</figure>
+					</a>
+				</li>
+			
+				<li>
+					<a href="http://twitter.com/share?url=http%3a%2f%2fwww.arla.se%2frecept%2fstuvade-makaroner%2f&amp;text=Stuvade+makaroner" title="Twitter">
+						<figure>
+							<img src="/Global/Social/ShareIcons/twitter.png" alt="Twitter" />
+							<figcaption class="visuallyhidden">Twitter</figcaption>
+						</figure>
+					</a>
+				</li>
+			
+			</ul>
+			
+		<a class="close icon-clean_search_button" href="#"></a>
+		</div>
+	</div>
+</section>
+<div class="footer-section">
+	<div class="item-links">
+		<ul class="app-links">
+			
+
+<li><img src="/Global/Sidfot/Appikon_2014_75x75.png" />Appar! <a href="https://play.google.com/store/apps/details?id=arla.activities">Android</a>, <a href="http://www.windowsphone.com/s?appid=4ddc791d-cbc7-4dd6-b722-c82cf6a41c18">WP8</a>, <a href="http://itunes.apple.com/se/app/arla-koket/id415895347?mt=8" target="_blank">iPhone&iPad</a></li>
+			
+
+<li><img src="/Global/Sidfot/arlakadabra_appikon_sajt.png" /><a href="https://itunes.apple.com/us/app/arlakadabra/id916045152?mt=8">Spela på mjölkpaketet!</a></li>
+		</ul>
+		
+<section class="arla-follow">
+	<h2>Vi finns p&#229; sociala medier</h2>
+	<ul class="follow-links">
+		
+				<li>
+					<a href="http://www.facebook.com/arlasverige" title="Facebook">
+						<figure>
+							<img src="/Global/Social/facebook_follow.png" alt="Facebook" />
+							<figcaption>Facebook</figcaption>
+						</figure>
+					</a>
+				</li>
+			
+				<li>
+					<a href="http://twitter.com/arlasverige" title="Twitter">
+						<figure>
+							<img src="/Global/Social/twitter_follow.png" alt="Twitter" />
+							<figcaption>Twitter</figcaption>
+						</figure>
+					</a>
+				</li>
+			
+	</ul>
+</section>
+	</div>
+	
+
+<section class="teaser-section">
+	<ul>
+		
+				<li>
+					<a href="/evenemang/arlakadabra/kapten-ko/tavla/" class="relative" title="Kapten Ko tävling ipad">
+						
+						<img src="/Global/Arlakadabra/Kapten%20Ko/Banner_290x130.jpg" alt="Kapten Ko tävling ipad" />
+					</a>
+				</li>
+			
+				<li>
+					<a href="/vara-produkter/vara-produkter/alla/arla-kvarg/samla-kvarg--fa-magasin/" class="relative" title="Samla Kvarg &amp; få magasin">
+						
+						<img src="/Global/V%c3%a5ra%20produkter/Varum%c3%a4rken/Kvarg/banner_kvarg-magasin_290x130.jpg" alt="Samla Kvarg &amp; få magasin" />
+					</a>
+				</li>
+			
+				<li>
+					<a href="/vara-produkter/vara-produkter/alla/arla-brand/" class="relative" title="Arla Brand - upptäck det goda">
+						
+						<img src="/Global/V%c3%a5ra%20produkter/Varum%c3%a4rken/Arla%20Brand/banner_arla-brand_290x130_2.jpg" alt="Arla Brand - upptäck det goda" />
+					</a>
+				</li>
+			
+				<li>
+					<a href="/evenemang/forskola1/" class="relative" title="Pyssel, Knep och Knåp!">
+						
+						<img src="/Global/Arlakadabra/F%c3%b6rskola/Banner%20v1.jpg" alt="Pyssel, Knep och Knåp!" />
+					</a>
+				</li>
+			
+				<li>
+					<a href="/evenemang/arlakadabra/" class="relative" title="Pyssla med Arlakadabra">
+						
+						<img src="/Global/Arlakadabra/banner_arlakadabra.png" alt="Pyssla med Arlakadabra" />
+					</a>
+				</li>
+			
+				<li>
+					<a href="http://www.stansbasta.se/" class="relative" title="Stans bästa semla">
+						
+						<img src="/Global/Sidfot/290x130_v1.jpg" alt="Stans bästa semla" />
+					</a>
+				</li>
+			
+	</ul>
+	
+</section>
+	
+
+<div class="login">
+	<a href="#login-area" class="login-link">
+		Logga in
+	</a>
+	<div class="login-area" id="login-area">
+		<div class="login-control">
+			<fieldset>
+				<legend>Logga in p&#229; Arla.se</legend>
+				
+				<div class="field">
+					<label for="usernameField">E-postadress</label>
+					<input name="ctl00$ctl00$ctl00$bodyRegion$ctl06$ctl11$usernameField" type="email" id="usernameField" autocomplete="off" />
+					
+				</div>
+				<div class="field">
+					<label for="passwordField">L&#246;senord</label>
+					<input name="ctl00$ctl00$ctl00$bodyRegion$ctl06$ctl11$passwordField" type="password" id="passwordField" />
+					
+				</div>
+				<button id="submitButton" type="submit" name="ctl00$ctl00$ctl00$bodyRegion$ctl06$ctl11$submitButton">Logga in</button>
+			</fieldset>
+			<a href="/glomt-losenordet/">Gl&#246;mt ditt l&#246;senord?</a>
+			<a href="/bli-medlem/">Bli medlem!</a>
+			<p><span>Tidigare medlem? På vår nya site får du som tidigare medlem registrera om dig men för ett tag framöver kommer du att komma åt dina tidigare sparade favoritrecept på</span><br /><a href="http://old.arla.se/Default____15978.aspx">gamla arla.se.</a></p>
+		</div>
+	</div>
+</div>
+	
+	
+
+<nav>
+	
+		<ul class="global-nav">
+			
+		<li>
+			<a href="http://nyheter.arla.se/" target="_blank">Nyheter &amp; press</a>
+		</li>
+	
+		<li>
+			<a href="http://www.arla.com/sv/Jobb-och-karriar/" target="_blank">Jobb</a>
+		</li>
+	
+		<li>
+			<a href="http://arla.sponsor.com" target="_blank">Sponsring</a>
+		</li>
+	
+		<li>
+			<a href="http://www.arla.com/sv/agare/" class="last" target="_blank">F&#246;r &#228;gare</a>
+		</li>
+	
+		</ul>
+	
+</nav>
+
+	
+	
+
+<div class="drop-list arla-site-select">
+	<a class="placeholder" href="#">Fler Arlasajter<span class="drop-list--toggle" /></a>
+	
+		<ul class="link-list">
+			
+		<li>
+			<a href="http://kund.arla.se">Orderwebben</a>
+		</li>
+	
+		<li>
+			<a href="https://kund.arla.se">Arla Kundportal</a>
+		</li>
+	
+		<li>
+			<a href="/butikswebben/">Butikswebben</a>
+		</li>
+	
+		<li>
+			<a href="http://arlafoodservice.se" target="_blank">Arla Foodservice</a>
+		</li>
+	
+		<li>
+			<a href="http://www.arla.com/sv" target="_blank">Koncernen Arla</a>
+		</li>
+	
+		<li>
+			<a href="http://www.mediabank.arla.net/" target="_blank">MediaWizard bildbank</a>
+		</li>
+	
+		<li>
+			<a href="http://arlaminior.se/">Arla Minior</a>
+		</li>
+	
+		</ul>
+	
+</div>
+	
+
+<nav>
+	<ul class="footer-nav">
+		
+				<li>
+					<a href="/">Start</a>
+					
+					<ul></ul>
+				</li>
+			
+				<li>
+					<a href="/recept/">Recept &amp; mat</a>
+					
+					<ul><li><a href="http://www.arla.se/sok/?query=hidden:*&amp;sn=dsi&amp;dsinh=18&amp;dsifv=5&amp;displaynew=true">Nya recept</a></li><li><a href="/recept/teman/">Teman &amp; h&#246;gtider</a></li><li><a href="/recept/veckomatsedlar/gi/">Veckans GI</a></li><li><a href="http://www.arla.se/sok/kottfars/snabba/">Snabbt med k&#246;ttf&#228;rs</a></li><li><a href="/recept/om-arla-koket/">Om Arla K&#246;ket</a></li></ul>
+				</li>
+			
+				<li>
+					<a href="/evenemang/">Aktuellt</a>
+					
+					<ul><li><a href="/om-arla/korna/koslapp/">Kosl&#228;pp</a></li><li><a href="/evenemang/aktuella-mjolkbaksidor-januari/">Mj&#246;lkbaksidor</a></li><li><a href="/evenemang/guldko/">Arla Guldko</a></li><li><a href="/evenemang/arlakadabra/filmer/">Arlakadabra film</a></li></ul>
+				</li>
+			
+				<li>
+					<a href="/vara-produkter/vara-produkter/">V&#229;ra produkter</a>
+					
+					<ul><li><a href="/vara-produkter/vara-produkter/produktlista/">Produkter A-&#214;</a></li><li><a href="/vara-produkter/vara-produkter/alla/arla-ko/">Arla Ko</a></li><li><a href="/vara-produkter/vara-produkter/alla/bregott/">Bregott</a></li><li><a href="/vara-produkter/vara-produkter/alla/keso/">Keso cottage cheese</a></li><li><a href="/vara-produkter/vara-produkter/alla/yoggi/">Yoggi</a></li></ul>
+				</li>
+			
+				<li>
+					<a href="/halsa/">H&#228;lsa</a>
+					
+					<ul><li><a href="/halsa/kost-och-kropp/mjolk-naring/">Mj&#246;lk &amp; n&#228;ring</a></li><li><a href="/halsa/komi-form/">Komiform</a></li></ul>
+				</li>
+			
+				<li>
+					<a href="http://arlaminior.se">Minior</a>
+					
+					<ul><li><a href="http://www.old.arla.se/boka" target="_blank">Boka en bondg&#229;rd</a></li></ul>
+				</li>
+			
+				<li>
+					<a href="/om-arla/">Om Arla</a>
+					
+					<ul><li><a href="/om-arla/fakta/">Fakta</a></li><li><a href="http://nyheter.arla.se/" target="_blank">Nyheter &amp; press</a></li><li><a href="http://www.arla.com/sv/Jobb-och-karriar/Lediga-jobb/" target="_blank">Lediga jobb</a></li><li><a href="http://www.arla.com/sv/Service-links/agare/" target="_blank">&#196;gare</a></li><li><a href="/om-arla/kontakta-oss/">Kontakta oss</a></li></ul>
+				</li>
+			
+	</ul>
+</nav>
+	
+
+<footer>
+	<h2>Kontakta Arla:</h2>
+<p class="contact-details"><span class="fn org">&nbsp;Arla Foods</span>,  			<span class="postal-code">105 46</span>&nbsp;<span class="locality">Stockholm</span>,  			<span class="tel">Telefon: </span><span class="value">08-789 50 00</span></p>
+	
+		<ul class="link-list">
+			
+		<li>
+			<a href="/om-arla/cookies/">Om cookies</a>
+		</li>
+	
+		</ul>
+	
+</footer>
+</div>
+
+
+			
+		
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5C0329C6" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAkpwJK0hS3JvTeGePzrDldmqqCYMOKP+VcEVo9AnPp7VHw50wOfOmgqsNTuY7qulrt6My5PI81+N8H0YCSJ1NHbmPOYjLrjH+G4PX4gX3sjLfGtlCU3fUPFvofXWk8+QNMDVHAigug6E4IRbg9lvlq+sXCFXSfuX02dgBM/MqPQT6X49Z8BMVENJXUc2XADAt0HKSUsg/QtsEGlz152kFnSrhfLPT8ePLTzcxDiWZtHLQ==" />
+</div></form>
+		
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/Web/Core/UI/Js/jquery-ui-1.10.3.custom.js"></script>
+<script src="/Web/Core/UI/Js/autocomplete-jquery.js"></script>
+<script>
+    !window.jQuery && document.write(unescape('%3Cscript src="/Web/Core/UI/JS/jquery-1.10.2.min.js"%3E%3C/script%3E'));
+    !window.jQuery && document.write(unescape('%3Cscript src="/Web/Core/UI/JS/jquery-ui-1.10.4.js"%3E%3C/script%3E'));
+	$.noConflict();
+</script>
+
+<script type="text/javascript"> 
+	
+
+var arlaTranslations = {
+	addMoreText: "Lägg till fler", backToTopLinkText: "Till toppen", printLinkText: "Skriv ut", close: "Stäng", fullScreenLinkText: "Visa i fullskärm", subNavigationOpen: "Fäll ut", subNavigationClose: "Fäll ihop", mainNavigationLabel: "Meny", ajaxErrorMessage: "Ett fel inträffade, vänligen försök igen senare.", sortLabel: "Sortera på", showAdvancedRecipeSearchFilterLinkText: "Visa receptfiltrering", hideAdvancedRecipeSearchFilterLinkText: "Dölj receptfiltrering", nutritionalValuesLinkText: "Näringsvärden", mathemAddToShoppingList: "Köp ingredienser"
+};
+	
+	
+
+var disqus_config = function() {
+	this.page.remote_auth_s3 = '';
+	this.page.api_key = 'kjBxdM5x7gYWLT9vFIVzIPmtiCDnpFq3NLCi0r1ByMmgVFbv7TJO5lyw764Gr9iA';
+},
+disqus_shortname = 'arlase',
+disqus_developer = 0,
+disqus_identifier = 'recipe:3153926565';
+	var language = "sv";
+var queryCompletionScriptUrl = "//arla-lb.appliance.siteseeker.se/qc/arla-sv-prod/";
+var searchUrl = "//arla-lb.appliance.siteseeker.se/search/arla-sv-prod/";
+
+
+var siteSeeker = {
+	searchIndexName: 'dsi',
+	sessionId: '',
+	rootPath: '/',
+	sl: 'sv-SE'
+};
+</script>
+
+<script type="text/javascript"> 
+    /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+    window.grunticon = function (e) { if (e && 3 === e.length) { var t = window, n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")), o = function (o) { var r = t.document.createElement("link"), a = t.document.getElementsByTagName("script")[0]; r.rel = "stylesheet", r.href = e[o && n ? 0 : o ? 1 : 2], a.parentNode.insertBefore(r, a) }, r = new t.Image; r.onerror = function () { o(!1) }, r.onload = function () { o(1 === r.width && 1 === r.height) }, r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" } };
+    grunticon(["/Web/Core/UI/Images/grunticons/icons.data.svg.css?v=3.2.23.0", "/Web/Core/UI/Images/grunticons/icons.data.png.css?v=3.2.23.0", "/Web/Core/UI/Images/grunticons/icons.fallback.css?v=3.2.23.0"]);
+</script>
+
+<script src="/Web/Core/UI/JavaScriptOptimizer.ashx?key=javaScript&amp;hash=1E900F6196E22A235CA03673A41C1044"></script>
+
+	</body>
+</html>

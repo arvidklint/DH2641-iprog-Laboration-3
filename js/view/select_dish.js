@@ -64,11 +64,20 @@ function dishList(model) {
 				appString += '</div>';
 			appString += '</div>';
 			appString += '<div class="dishDescription">';
-				appString += foundDishes[i]["description"];
+
+				appString += shortenDescription(foundDishes[i]["description"]);
 			appString += '</div>';
 		appString += '</div>';
 	}
 
 	appString += '</div>';
+}
 
+function shortenDescription(description) {
+	// Tar emot en beskrivning av en maträtt. Förkortar den till den maximalt tillåtna längden på valsidan.
+	if (description.length > 100) {
+		shortened = description.length; 
+	}
+
+	return shortened;
 }
