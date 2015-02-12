@@ -104,23 +104,23 @@ h4 {
 }
 
 .border {
-	border: solid 2px black;
+	border: solid 1px black;
 }
 
 .border-top {
-	border-top: solid 2px black;
+	border-top: solid 1px black;
 }
 
 .border-bottom {
-	border-bottom: solid 2px black;
+	border-bottom: solid 1px black;
 }
 
 .border-right {
-	border-right: solid 2px black;
+	border-right: solid 1px black;
 }
 
 .border-left {
-	border-left: solid 2px black;
+	border-left: solid 1px black;
 }
 
 .tableSidebar {
@@ -142,16 +142,17 @@ h4 {
 }
 
 .borderTop {
-	border-top: solid 2px black;
+	border-top: solid 1px black;
 }
 
 .sidebarTableTitle {
-	border-bottom: solid 2px black;
-	border-top: solid 2px black;
+	border-bottom: solid 1px black;
+	border-top: solid 1px black;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background: #D6D6D6;
 }
 
 .center {
@@ -195,5 +196,9 @@ td {
 /*	border-top: 1px solid gray;*/
 	padding: 3px;
 	width: 100%;
+	background: #D6D6D6;
+}
+
+#dishname {
 	background: #D6D6D6;
 }
