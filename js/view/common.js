@@ -17,7 +17,7 @@ function before() {
 	appString += '<div class="row">';
 }
 
-function myDinner(model) {
+function myDinner(model, pendingPrice) {
 	model.addDishToMenu(1);
 	model.addDishToMenu(100);
 	model.addDishToMenu(200);
@@ -50,9 +50,8 @@ function myDinner(model) {
 				appString += '</tr>';
 			}
 			appString += '<tr>';
-				appString += '<td></td>';
-				appString += '<td class="textAlignCenter">Pending</td>';
-				appString += '<td class="textAlignRight">0.00</td>';
+				appString += '<td colspan="2">Pending</td>';
+				appString += '<td class="textAlignRight">' + pendingPrice.toFixed(2)  + '</td>';
 			appString += '</tr>';
 			appString += '<tr>';
 				appString += '<td class="textAlignRight borderTop" colspan="3">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests()).toFixed(2) + '</td>';
