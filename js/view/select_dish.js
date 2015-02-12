@@ -55,16 +55,8 @@ function dishList(model) {
 	foundDishes = model.getAllDishes("main dish");
 	for (i = 0; i < foundDishes.length; i++) {
 		appString += '<div class="col-md-3 col-sm-4 col-xs-6 dishObjectFrame">';
-			appString += '<div class="dishThumbFrame">';
-				appString += '<div>';
-					appString += '<img src="images/' + foundDishes[i]["image"] + '" class="dishThumb"/>';
-				appString += '</div>';
-				appString += '<div class="dishTitle">';
-					appString += foundDishes[i]["name"];
-				appString += '</div>';
-			appString += '</div>';
+			appString += dishThumb(foundDishes[i]);
 			appString += '<div class="dishDescription">';
-
 				appString += shortenDescription(foundDishes[i]["description"]);
 			appString += '</div>';
 		appString += '</div>';
@@ -75,9 +67,9 @@ function dishList(model) {
 
 function shortenDescription(description) {
 	// Tar emot en beskrivning av en maträtt. Förkortar den till den maximalt tillåtna längden på valsidan.
-	if (description.length > 100) {
-		shortened = description.length; 
+	if (description.length > 200) {
+		return description.substr(0,200) + "…";
+	} else {
+		return description;
 	}
-
-	return shortened;
 }

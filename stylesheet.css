@@ -168,3 +168,20 @@ td {
 #myDinnerSummaryBackButtonFrame {
 	text-align: right;
 }
+
+.dishThumbFrame {
+/*	border: 1px solid gray;*/
+	width: 170px;
+	height: 170px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: bottom;
+	background: #EDEDED;
+}
+
+.dishTitle {
+/*	border-top: 1px solid gray;*/
+	padding: 3px;
+	width: 100%;
+	background: #D6D6D6;
+}

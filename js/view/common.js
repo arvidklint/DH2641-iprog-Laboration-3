@@ -68,6 +68,20 @@ function secondBar(container, model) {
 	appString += '</div>';
 }
 
+function dishThumb(dish) {
+	// Tar emot en dish. Returnerar en standardutformad ram med thumbnail och titel. 
+	dishThumbStr = '<div class="dishThumbFrame">';
+		dishThumbStr += '<div>';
+			dishThumbStr += '<img src="images/' + dish["image"] + '" class="dishThumb"/>';
+		dishThumbStr += '</div>';
+		dishThumbStr += '<div class="dishTitle">';
+			dishThumbStr += dish["name"];
+		dishThumbStr += '</div>';
+	dishThumbStr += '</div>';
+
+	return dishThumbStr;
+}
+
 function after(container) {
 	appString += '</div>';
 	appString += '</div>';
