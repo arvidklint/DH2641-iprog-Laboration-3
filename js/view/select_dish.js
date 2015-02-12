@@ -1,5 +1,6 @@
 $(function() {
 		var model = new DinnerModel();
+		model.createMenuArray();
 		var view = new SelectDish($('#application'), model);
 	}
 );
@@ -8,7 +9,7 @@ var SelectDish = function(container, model) {
 	header(container);
 	before();
 
-	myDinner();
+	myDinner(model);
 	meinFrame(model);
 
 	after(container);
