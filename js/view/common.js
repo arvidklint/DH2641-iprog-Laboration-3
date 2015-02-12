@@ -31,16 +31,6 @@ function myDinner(model, pendingPrice) {
 		appString += '<div>';
 			appString += '<input type="number" value="3"/>';
 		appString += '</div>';
-		// appString += '<div class="row">';
-		// 	appString += '<div class="col-xs-6 sidebarTableTitle"">';
-		// 		appString += 'Dish Name';
-		// 	appString += '</div>';
-		// 	appString += '<div class="col-xs-6 sidebarTableTitle">';
-		// 		appString += '<div class="pull-right">';
-		// 			appString += 'Cost';
-		// 		appString += '</div>';
-		// 	appString += '</div>';
-		// appString += '</div>';
 		appString += '<div class="row">';
 			appString += '<div class="col-xs-12 sidebarTableTitle"">';
 				appString += '<table class="tableSidebar">';
@@ -70,7 +60,11 @@ function myDinner(model, pendingPrice) {
 				appString += '<td class="textAlignRight">' + pendingPrice.toFixed(2)  + '</td>';
 			appString += '</tr>';
 			appString += '<tr>';
+<<<<<<< HEAD
 				appString += '<td class="textAlignRight borderTop" colspan="4">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests()).toFixed(2) + '</td>';
+=======
+				appString += '<td class="textAlignRight borderTop" colspan="3">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests() + pendingPrice).toFixed(2) + '</td>';
+>>>>>>> 5bb40a8f59c74f3c541d3d2f01dbb979c148d037
 			appString += '</tr>';
 		appString += '</table>';
 		appString += '<div class="center">';

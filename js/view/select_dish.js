@@ -9,7 +9,7 @@ var SelectDish = function(container, model) {
 	header(container);
 	before();
 
-	myDinner(model);
+	myDinner(model, 0);
 	meinFrame(model);
 
 	after(container);
