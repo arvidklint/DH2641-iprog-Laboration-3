@@ -31,16 +31,28 @@ function myDinner(model) {
 		appString += '<div>';
 			appString += '<input type="number" value="3"/>';
 		appString += '</div>';
+		// appString += '<div class="row">';
+		// 	appString += '<div class="col-xs-6 sidebarTableTitle"">';
+		// 		appString += 'Dish Name';
+		// 	appString += '</div>';
+		// 	appString += '<div class="col-xs-6 sidebarTableTitle">';
+		// 		appString += '<div class="pull-right">';
+		// 			appString += 'Cost';
+		// 		appString += '</div>';
+		// 	appString += '</div>';
+		// appString += '</div>';
 		appString += '<div class="row">';
-			appString += '<div class="col-xs-6 sidebarTableTitle">';
-				appString += 'Dish Name';
-			appString += '</div>';
-			appString += '<div class="col-xs-6 sidebarTableTitle">';
-				appString += '<div class="pull-right">';
-					appString += 'Cost';
-				appString += '</div>';
+			appString += '<div class="col-xs-12 sidebarTableTitle"">';
+				appString += '<table class="tableSidebar">';
+					appString += '<tr>';
+						appString += '<td></td>';
+						appString += '<td class="textAlignCenter">Dish Name</td>';
+						appString += '<td class="textAlignRight">Cost</td>';
+					appString += '</tr>';
+				appString += '</table>';
 			appString += '</div>';
 		appString += '</div>';
+
 		appString += '<table class="tableSidebar">';
 			for (key in menu) {
 				appString += '<tr class="border">';
@@ -74,7 +86,7 @@ function secondBar(model) {
 			appString += '<div class="col-xs-6 col-sm-6" id="myDinnerSummaryBackButtonFrame">';
 				appString += '<button type="button" class="btn" id="goBack">';
 				appString += '<span class="glyphicon glyphicon-chevron-left floatLeft"></span>';
-				appString += 'Go back and edit dinner';
+				appString += ' Go back and edit dinner';
 				appString += '</button>';
 			appString += '</div>';
 		appString += '</div>';	

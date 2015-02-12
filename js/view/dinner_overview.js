@@ -21,15 +21,12 @@ function dishList(model) {
 				model.addDishToMenu(100);
 				model.addDishToMenu(200);
 				fullMenu = model.getFullMenu();
-				totalPrice = 0;
 				for (key in fullMenu) {
 					appString += '<div class="col-sm-3 col-xs-4 col-centered dinnerOverviewObject">';
 						appString += dishThumb(fullMenu[key]);
 						appString += '<div class="priceFrame">';
 							appString += '<span class="priceAtBottom">';
-								price = sumIngredientPrices(fullMenu[key]);
-								appString += price;
-								totalPrice += price;
+								appString += model.getDishPrice(fullMenu[key]["id"]) + " SEK";
 							appString += '</span>';
 						appString += '</div>';
 					appString += '</div>';
@@ -40,7 +37,7 @@ function dishList(model) {
 					appString += '</div>';
 					appString += '<div class="totalPriceFrame">';
 						appString += '<span class="priceAtBottom">';
-							appString += '1234';
+							appString += model.getTotalMenuPrice() + " SEK";
 						appString += '</span>';
 					appString += '</div>';
 				appString += '</div>';
