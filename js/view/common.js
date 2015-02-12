@@ -60,11 +60,7 @@ function myDinner(model, pendingPrice) {
 				appString += '<td class="textAlignRight">' + pendingPrice.toFixed(2)  + '</td>';
 			appString += '</tr>';
 			appString += '<tr>';
-<<<<<<< HEAD
-				appString += '<td class="textAlignRight borderTop" colspan="4">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests()).toFixed(2) + '</td>';
-=======
 				appString += '<td class="textAlignRight borderTop" colspan="3">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests() + pendingPrice).toFixed(2) + '</td>';
->>>>>>> 5bb40a8f59c74f3c541d3d2f01dbb979c148d037
 			appString += '</tr>';
 		appString += '</table>';
 		appString += '<div class="center">';
