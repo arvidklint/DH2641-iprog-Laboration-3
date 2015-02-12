@@ -21,7 +21,7 @@ function mainFrame(model){
 
 	menu = model.getFullMenu();
 
-	appString += '<div class="container-fluid border-right border-left border-bottom">';
+	appString += '<div class="container-fluid" id="prepFrame">';
 	for (var key in menu) {
 		appString += '<div class="row">';
 			showDinnerPrep(menu[key]);

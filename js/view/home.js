@@ -14,7 +14,7 @@ var HomeView = function(container, model) {
 		'<span class="subtitle">From the best chefs in the world directly into your kitchen</span>' + 
 		'</div>');
 	
-	$("#header").css('background-color', 'rgba(255, 229, 0, 0.75)');
+	$("#header").css('background-color', 'rgba(253, 222, 117, 0.75)');
 
 	container.append('<div class="container" id="welcome-box">' +
 		'<p id="welcome-title">A home dinner service</p>' +
