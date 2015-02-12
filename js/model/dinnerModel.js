@@ -3,7 +3,10 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var menu = [];
+
+	this.createMenuArray = function() {
+		this.menu = [];
+	}
 
 	this.setNumberOfGuests = function(num) {
 		this.numberOfGuests = num;
@@ -16,15 +19,15 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		return this.getDish(menu[type]);
+		return this.getDish(this.menu[type]);
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		fullMenu = [];
 
-		for (var i in menu) {
-			fullMenu.push(this.getDish(menu[i]));
+		for (var i in this.menu) {
+			fullMenu.push(this.getDish(this.menu[i]));
 		}
 		return fullMenu;
 	}
@@ -33,12 +36,12 @@ var DinnerModel = function() {
 	this.getAllIngredients = function() {
 		var ingredients = [];
 
-		if (menu == null) {
+		if (this.menu == null) {
 			return;
 		}
 
-		for (var key in menu) {
-			dish = this.getDish(menu[key]);
+		for (var key in this.menu) {
+			dish = this.getDish(this.menu[key]);
 			for (var j in dish.ingredients) {
 				ingredients.push(dish.ingredients[j]);
 			}
@@ -61,14 +64,14 @@ var DinnerModel = function() {
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		dish = this.getDish(id);
-		menu[dish["type"]] = id;
+		this.menu[dish["type"]] = id;
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		for (var key in menu) {
-			if (menu[key] == id) {
-				delete menu[key];
+		for (var key in this.menu) {
+			if (this.menu[key] == id) {
+				delete this.menu[key];
 			}
 		}
 		

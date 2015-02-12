@@ -54,7 +54,7 @@ function myDinner() {
 	appString += '</div>';
 }
 
-function secondBar(container, model) {
+function secondBar(model) {
 	appString += '<div class="myDinnerSummaryFrame">';
 		appString += '<div class="row">'
 			appString += '<div class="col-xs-6 col-sm-6" id="myDinnerSummary">';
@@ -62,7 +62,10 @@ function secondBar(container, model) {
 				appString += 'My Dinner: ' + model.getNumberOfGuests() + ' people';
 			appString += '</div>';
 			appString += '<div class="col-xs-6 col-sm-6" id="myDinnerSummaryBackButtonFrame">';
-				appString += '<button type="button" class="btn" id="goBack">Go back and edit dinner</button>';
+				appString += '<button type="button" class="btn" id="goBack">';
+				appString += '<span class="glyphicon glyphicon-chevron-left floatLeft"></span>';
+				appString += 'Go back and edit dinner';
+				appString += '</button>';
 			appString += '</div>';
 		appString += '</div>';	
 	appString += '</div>';
