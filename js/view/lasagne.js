@@ -1,15 +1,25 @@
 $(function() {
 		var model = new DinnerModel();
+		model.createMenuArray();
 		var view = new LasagneView($('#application'), model);
 	}
 );
 
 var LasagneView = function(container, model) {
+	model.setNumberOfGuests(4);
+	model.addDishToMenu(100);
+
 	header(container);
 	before();
-	myDinner();
+	myDinner(model, getPendingPrice(model));
 	mainFrame(model);
 	after(container);
+}
+
+var getPendingPrice = function(model) {
+	dish = model.getSelectedDish("main dish");
+	pendingPrice = model.getDishPrice(dish["id"]) * model.getNumberOfGuests();
+	return pendingPrice;
 }
 
 function mainFrame(model) {
