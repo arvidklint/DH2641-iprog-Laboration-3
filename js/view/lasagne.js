@@ -15,16 +15,17 @@ var LasagneView = function(container, model) {
 function mainFrame(model) {
 	appString += '<div class="col-xs-9" id="main">';
 		appString += '<div class="row">';
-			showDish();
+			showDish(model);
 			showIngredients(model);
 		appString += '</div>';
 	appString += '</div>';
 }
 
 function showDish(model) {
+	var dinner = model.getDish(100);
 	appString += '<div class="col-xs-6">';
 		appString += '<h3>';
-			appString += 'Lasagne';
+			appString += dinner["name"];
 		appString += '</h3>';
 		appString += '<img src="images/meatballs-big.jpg" class="img-responsive" alt="Meatballs">'
 		appString += '<p>Lorem ipsum dolor sit amet, in fabulas luptatum definitionem duo, an qui natum tollit posidonium, mel vivendum adipiscing definitiones et. Ad vim sanctus maiestatis ullamcorper, labitur neglegentur qui eu, at est persius electram. His soleat iisque dolorem te. An sed minimum vivendum, sed at accumsan definitionem. Ferri epicurei vim id, melius hendrerit ius eu. Persecuti appellantur ne vis, eam ei viris tempor, ius possit pericula referrentur te.</p>';
