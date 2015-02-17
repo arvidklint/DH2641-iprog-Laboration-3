@@ -1,37 +1,12 @@
-$(function() {
-		var model = new DinnerModel();
-		model.createMenuArray();
-		var view = new SelectDish($('#application'), model);
-	}
-);
-
 var SelectDish = function(container, model) {
-	header(container);
-	before();
+	this.meinFrame = function(container, model) {
+		appString = '<div class="col-xs-9" id="meinFrame">';
+		appString += '</div>';
 
-	myDinner(model, 0);
-	meinFrame(model);
+		container.append(appString);
+	}
 
-	after(container);
-}
-
-// var DishChooser = function(container) {
-// 	container.append('<div class="row">');
-// 	container.append('<div class="col-xs-12">Rad</div>');
-
-
-// 	container.append('</div>');
-// }
-
-function meinFrame(model) {
-	appString += '<div class="col-xs-9" id="main">';
-	dishChooser();
-	dishList(model);
-	appString += '</div>';
-}
-
-function dishChooser() {
-	appString += '<div class="row" id="dishChooser">';
+	this.dishChooser = function(container) {
 		appString += '<div class="row">';
 			appString += '<div class="col-xs-12" id="dishChooserHeadline">';
 				appString += '<p id="select_dish">Select dish</p>';
@@ -42,35 +17,69 @@ function dishChooser() {
 				appString += '<input type="search" placeholder="Enter key words" name="search" id="searchBox"/>';
 				appString += '<button class="btn" id="searchButton">Search</button>';
 				appString += '<select id="types">';
-					appString += 	'<option value="Starter">Starter</option>' + 
-									'<option value="Main">Main</option>' + 
-									'<option value="Dessert">Dessert</option>';
+					appString += 	'<option value="starter">Starter</option>' + 
+									'<option value="main dish">Main</option>' + 
+									'<option value="dessert">Dessert</option>';
 				appString += '</select>';
 			appString += '</div>';
 		appString += '</div>';
-	appString += '</div>';
-}
 
-function dishList(model) {
-	appString += '<div class="row" id="dishList">';
-	foundDishes = model.getAllDishes("starter");
-	for (i = 0; i < foundDishes.length; i++) {
-		appString += '<div class="col-md-3 col-sm-4 col-xs-6 dishObjectFrame">';
-			appString += dishThumb(foundDishes[i]);
-			appString += '<div class="dishDescription">';
-				appString += shortenDescription(foundDishes[i]["description"]);
-			appString += '</div>';
-		appString += '</div>';
+		container.append(appString);
 	}
 
-	appString += '</div>';
+	this.dishList = function(container, model, selectedType) {
+		dishListStr = '';
+		this.foundDishes = model.getAllDishes(selectedType);
+		for (i = 0; i < this.foundDishes.length; i++) {
+			dishListStr += '<div class="col-md-3 col-sm-4 col-xs-6 dishObjectFrame" id="' + this.foundDishes[i]["id"] + '">';
+				dishListStr += dishThumb(this.foundDishes[i]);
+				dishListStr += '<div class="dishDescription">';
+					dishListStr += shortenDescription(this.foundDishes[i]["description"]);
+				dishListStr += '</div>';
+			dishListStr += '</div>';
+		}
+
+		container.append(dishListStr);
+	}
+
+	this.shortenDescription = function(description) {
+		// Tar emot en beskrivning av en maträtt. Förkortar den till den maximalt tillåtna längden på valsidan.
+		if (description.length > 200) {
+			return description.substr(0,200) + "…";
+		} else {
+			return description;
+		}
+	}
+
+	this.declareWidgets = function(container) {
+		this.container = container;
+		this.meinFrame = container.find("#meinFrame");
+		this.types = container.find("#types");
+		this.buttonId1 = container.find("#1");
+		this.dishListContainer = container.find("#dishList");
+	}
+
+	meinFrame($('#mainRow'), model);
+
+	$('#meinFrame').append('<div class="row" id="dishChooser"></div>');
+	dishChooser($('#dishChooser'));
+
+	$('#meinFrame').append('<div class="row" id="dishList"></div>');
+	dishList($('#dishList'), model, "starter");
+
+	declareWidgets(container);
+
+	controller = new SelectDishController(this, model);
+
+	
 }
 
-function shortenDescription(description) {
-	// Tar emot en beskrivning av en maträtt. Förkortar den till den maximalt tillåtna längden på valsidan.
-	if (description.length > 200) {
-		return description.substr(0,200) + "…";
-	} else {
-		return description;
-	}
-}
+// var DishChooser = function(container) {
+// 	container.append('<div class="row">');
+// 	container.append('<div class="col-xs-12">Rad</div>');
+
+
+// 	container.append('</div>');
+// }
+
+

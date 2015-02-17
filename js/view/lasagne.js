@@ -1,11 +1,4 @@
-$(function() {
-		var model = new DinnerModel();
-		model.createMenuArray();
-		var view = new LasagneView($('#application'), model);
-	}
-);
-
-var LasagneView = function(container, model) {
+var LasagneView = function(container, model, dishId) {
 	model.setNumberOfGuests(4);
 	model.addDishToMenu(100);
 

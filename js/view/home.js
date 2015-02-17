@@ -1,14 +1,11 @@
-$(function() {
-	//We instantiate our model
-	var model = new DinnerModel();
-	
-	//And create the needed controllers and views
-	var homeView = new HomeView($("#application"), model);
-
-});
-
-
 var HomeView = function(container, model) {
+	
+	this.update = function(model, args) {
+
+	}
+
+	model.addObserver(this);
+
 	container.append('<div class="container-fluid" id="header">' + 
 		'<span class="title">Homelette</span>' + 
 		'<span class="subtitle">From the best chefs in the world directly into your kitchen</span>' + 
@@ -23,7 +20,10 @@ var HomeView = function(container, model) {
 		'<button id="create-new-dinner" class="btn">Create new dinner</button>' +
 		'</div>');
 
-	$("body").css('background-image', 'url("images/pigtram.jpg")');
-	$("body").css('background-color', '#C9CFD6');
-	$("body").css('background-repeat', 'no-repeat');
+	container.css('background-image', 'url("images/pigtram.jpg")');
+	container.css('background-color', '#C9CFD6');
+	container.css('background-repeat', 'no-repeat');
+
+	this.container = container;
+	this.createNewDinner = container.find("#create-new-dinner");
 }
