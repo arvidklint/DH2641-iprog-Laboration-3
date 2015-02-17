@@ -1,4 +1,6 @@
-var SelectDish = function(container, model) {
+var SelectDish = function(container, model, dishType) {
+	dishType = dishType || "starter";
+
 	this.meinFrame = function(container, model) {
 		appString = '<div class="col-xs-9" id="meinFrame">';
 		appString += '</div>';
@@ -6,7 +8,7 @@ var SelectDish = function(container, model) {
 		container.append(appString);
 	}
 
-	this.dishChooser = function(container) {
+	this.dishChooser = function(container, dishType) {
 		appString += '<div class="row">';
 			appString += '<div class="col-xs-12" id="dishChooserHeadline">';
 				appString += '<p id="select_dish">Select dish</p>';
@@ -16,7 +18,7 @@ var SelectDish = function(container, model) {
 			appString += '<div class="col-xs-12" id="dishChooserSearchFrame">';
 				appString += '<input type="search" placeholder="Enter key words" name="search" id="searchBox"/>';
 				appString += '<button class="btn" id="searchButton">Search</button>';
-				appString += '<select id="types">';
+				appString += '<select id="types" selected="' + dishType + '">';
 					appString += 	'<option value="starter">Starter</option>' + 
 									'<option value="main dish">Main</option>' + 
 									'<option value="dessert">Dessert</option>';
@@ -62,10 +64,10 @@ var SelectDish = function(container, model) {
 	meinFrame($('#mainRow'), model);
 
 	$('#meinFrame').append('<div class="row" id="dishChooser"></div>');
-	dishChooser($('#dishChooser'));
+	dishChooser($('#dishChooser'), dishType);
 
 	$('#meinFrame').append('<div class="row" id="dishList"></div>');
-	dishList($('#dishList'), model, "starter");
+	dishList($('#dishList'), model, dishType);
 
 	declareWidgets(container);
 

@@ -90,6 +90,7 @@ var DinnerModel = function() {
 	this.addDishToMenu = function(id) {
 		dish = this.getDish(id);
 		this.menu[dish["type"]] = id;
+		this.notifyObservers();
 	}
 
 	//Removes dish from menu
@@ -325,7 +326,7 @@ var DinnerModel = function() {
 			'price':4
 			}]
 		},{
-		'id':102,
+		'id':103,
 		'name':'Lasagna',
 		'type':'main dish',
 		'image':'lasagne.jpg',

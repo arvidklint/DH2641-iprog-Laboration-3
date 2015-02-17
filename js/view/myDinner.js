@@ -1,13 +1,5 @@
 var MyDinner = function(container, model, pendingPrice) {
-	model.addDishToMenu(1);
-	model.addDishToMenu(100);
-	model.addDishToMenu(200);
-
-	menu = model.getFullMenu();
-
-	model.setNumberOfGuests(4);
-
-	appString = '<div class="col-xs-3" id="myDinner">';
+	this.myDinnerContents = function(container, model) {
 		appString += 'My Dinner';
 		appString += '<div>';
 			appString += '<input type="number" value="3"/>';
@@ -47,7 +39,25 @@ var MyDinner = function(container, model, pendingPrice) {
 		appString += '<div class="center">';
 			appString += '<button class="btn" id="confirmDinnerButton">Confirm Dinner</button>';
 		appString += '</div>';
-	appString += '</div>';
 
-	container.append(appString);
+		container.append(appString);
+	}
+
+	this.update = function(model, arg) {
+		this.myDinner.empty();
+		this.myDinnerContents(this.myDinner, model);
+	}
+
+	this.declareWidgets = function(container) {
+		this.container = container;
+		this.myDinner = this.container.find('#myDinner');
+	}
+
+	menu = model.getFullMenu();
+
+	container.append('<div class="col-xs-3" id="myDinner"></div>');
+	this.declareWidgets(container);
+	this.update(model, null);
+	model.addObserver(this);
+
 }

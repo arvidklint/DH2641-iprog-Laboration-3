@@ -212,3 +212,7 @@ td {
 	border: none;
 	color: #6B0000;
 }
+
+.dishObjectFrame {
+	cursor: pointer;
+}
