@@ -18,7 +18,7 @@ var SelectDish = function(container, model, dishType) {
 			appString += '<div class="col-xs-12" id="dishChooserSearchFrame">';
 				appString += '<input type="search" placeholder="Enter key words" name="search" id="searchBox"/>';
 				appString += '<button class="btn" id="searchButton">Search</button>';
-				appString += '<select id="types" selected="' + dishType + '">';
+				appString += '<select id="types">';
 					appString += 	'<option value="starter">Starter</option>' + 
 									'<option value="main dish">Main</option>' + 
 									'<option value="dessert">Dessert</option>';
