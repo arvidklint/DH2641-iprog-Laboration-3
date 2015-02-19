@@ -29,9 +29,9 @@ var SelectDish = function(container, model, dishType) {
 		container.append(appString);
 	}
 
-	this.dishList = function(container, model, selectedType) {
+	this.dishList = function(container, model, selectedType, filter) {
 		dishListStr = '';
-		this.foundDishes = model.getAllDishes(selectedType);
+		this.foundDishes = model.getAllDishes(selectedType, filter);
 		for (i = 0; i < this.foundDishes.length; i++) {
 			dishListStr += '<div class="col-md-3 col-sm-4 col-xs-6 dishObjectFrame" id="' + this.foundDishes[i]["id"] + '">';
 				dishListStr += dishThumb(this.foundDishes[i]);
@@ -58,6 +58,8 @@ var SelectDish = function(container, model, dishType) {
 		this.meinFrame = container.find("#meinFrame");
 		this.types = container.find("#types");
 		this.buttonId1 = container.find("#1");
+		this.searchBox = container.find("#searchBox");
+		this.searchButton = container.find("#searchButton");
 		this.dishListContainer = container.find("#dishList");
 	}
 
