@@ -61,7 +61,7 @@ var SelectDish = function(container, model, dishType) {
 		this.dishListContainer = container.find("#dishList");
 	}
 
-	meinFrame($('#mainRow'), model);
+	meinFrame(container, model);
 
 	$('#meinFrame').append('<div class="row" id="dishChooser"></div>');
 	dishChooser($('#dishChooser'), dishType);

@@ -1,10 +1,3 @@
-$(function() {
-		var model = new DinnerModel();
-		model.createMenuArray();
-		var view = new PrepView($('#application'), model);
-	}
-);
-
 var PrepView = function(container, model) {
 	header(container);
 	before();
