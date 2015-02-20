@@ -50,3 +50,10 @@ function dishThumb(dish) {
 
 	return dishThumbStr;
 }
+
+function meinFrame(container, model) {
+	appString = '<div class="col-xs-9" id="meinFrame">';
+	appString += '</div>';
+
+	container.append(appString);
+}

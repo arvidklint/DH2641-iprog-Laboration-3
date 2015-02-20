@@ -1,8 +1,8 @@
 var LasagneController = function(view, model) {
 	view.backButton.click(function() {
-		view.meinFrame.empty();
+		view.container.empty();
 		dish = model.getDish(view.dishID);
-		SelectDish(view.meinFrame, model);
+		SelectDish(view.container, model);
 	});
 
 	view.confirmDishButton.click(function() {

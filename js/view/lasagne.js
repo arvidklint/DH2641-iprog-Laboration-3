@@ -27,6 +27,7 @@ var LasagneView = function(container, model, dishID) {
 	}
 
 	var showIngredients = function(container, model) {
+		alert("showIngredients");
 		appString = '<div class="col-xs-6" id="ingredientsFrame">';
 			appString += '<h4>';
 				appString += 'Ingredients for 4 people';
@@ -61,7 +62,6 @@ var LasagneView = function(container, model, dishID) {
 
 	var declareWidgets = function(container) {
 		this.container = container;
-		this.meinFrame = $('#meinFrame');
 		this.backButton = $('#backButton');
 		this.confirmDishButton = $('#confirmDishButton');
 	}
@@ -69,8 +69,8 @@ var LasagneView = function(container, model, dishID) {
 	// model.setNumberOfGuests(4);
 	// model.addDishToMenu(100);
 	// mainFrame($('#mainRow'), model);
-	showDish($('#meinFrame'), model);
-	showIngredients($('#meinFrame'), model);
+	showDish(container, model);
+	showIngredients(container, model);
 
 	declareWidgets(container);
 

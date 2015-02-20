@@ -8,6 +8,7 @@ var HomeController = function(view, model) {
 		header($('#application'));
 		mainRow($('#application'));
 		MyDinner($('#mainRow'), model, 0);
-		SelectDish($('#mainRow'), model);
+		meinFrame($('#mainRow'), model);
+		SelectDish($('#meinFrame'), model);
 	});
 }

@@ -5,8 +5,8 @@ var SelectDishController = function(view, model) {
 			$(this).click(function() {
 				id = $(this).attr("id");
 				//alert(id);
-				view.meinFrame.empty();
-				LasagneView($('application'), model, id);
+				view.container.empty();
+				LasagneView(view.container, model, id);
 			});
 		});
 	}
@@ -17,7 +17,6 @@ var SelectDishController = function(view, model) {
 
 	view.types.change(function() {
 		// Val av typ av rätter att bläddra i
-		view.dishListContainer.empty();
 		view.dishList(view.dishListContainer, model, view.types.val());
 		dishLinks(view);
 	});
@@ -25,8 +24,8 @@ var SelectDishController = function(view, model) {
 	view.searchButton.click(function() {
 		results = model.getAllDishes(view.types.val(), view.searchBox.val());
 		alert(results[0]["id"]);
-		view.dishListContainer.empty();
 	});
 
 	dishLinks(view);
+
 }
