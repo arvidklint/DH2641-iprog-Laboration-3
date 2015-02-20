@@ -16,6 +16,7 @@ var SelectDish = function(container, model, dishType) {
 									'<option value="main dish">Main</option>' + 
 									'<option value="dessert">Dessert</option>';
 				appString += '</select>';
+				appString += '<span id="searchResults"></span>';
 			appString += '</div>';
 		appString += '</div>';
 
@@ -50,12 +51,12 @@ var SelectDish = function(container, model, dishType) {
 
 	this.declareWidgets = function(container) {
 		this.container = container;
-		this.meinFrame = container.find('#meinFrame');
 		this.types = container.find("#types");
 		this.buttonId1 = container.find("#1");
 		this.searchBox = container.find("#searchBox");
 		this.searchButton = container.find("#searchButton");
 		this.dishListContainer = container.find("#dishList");
+		this.searchResults = container.find('#searchResults');
 	}
 
 	container.append('<div class="row" id="dishChooser"></div>');

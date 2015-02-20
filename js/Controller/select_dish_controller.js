@@ -17,13 +17,19 @@ var SelectDishController = function(view, model) {
 
 	view.types.change(function() {
 		// Val av typ av rätter att bläddra i
+		view.searchResults.empty();
 		view.dishList(view.dishListContainer, model, view.types.val());
 		dishLinks(view);
 	});
 
 	view.searchButton.click(function() {
-		results = model.getAllDishes(view.types.val(), view.searchBox.val());
-		alert(results[0]["id"]);
+		if (filter = view.searchBox.val()) {
+			dishType = view.types.val();
+			results = model.getAllDishes(dishType, filter);
+			view.searchResults.html("Found dishes: " + results.length);
+			view.dishListContainer.empty();
+			view.dishList(view.dishListContainer, model, dishType, filter);
+		}
 	});
 
 	dishLinks(view);
