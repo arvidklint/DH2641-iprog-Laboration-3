@@ -10,6 +10,7 @@ var SelectDish = function(container, model, dishType) {
 		appString += '<div class="row">'
 			appString += '<div class="col-xs-12" id="dishChooserSearchFrame">';
 				appString += '<input type="search" placeholder="Enter key words" name="search" id="searchBox"/>';
+				appString += '<button class="btn" id="cancelSearch">X</button>';
 				appString += '<button class="btn" id="searchButton">Search</button>';
 				appString += '<select id="types">';
 					appString += 	'<option value="starter">Starter</option>' + 
@@ -55,6 +56,7 @@ var SelectDish = function(container, model, dishType) {
 		this.buttonId1 = container.find("#1");
 		this.searchBox = container.find("#searchBox");
 		this.searchButton = container.find("#searchButton");
+		this.cancelSearchButton = container.find('#cancelSearch');
 		this.dishListContainer = container.find("#dishList");
 		this.searchResults = container.find('#searchResults');
 	}
