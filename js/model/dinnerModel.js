@@ -5,6 +5,7 @@ var DinnerModel = function() {
 	// and selected dinner options for dinner menu
 
 	this._observers = [];
+	this.pendingPrice = 0;
 
 	this.addObserver = function(observer) {
 		this._observers.push(observer);
@@ -18,6 +19,15 @@ var DinnerModel = function() {
 
 	this.createMenuArray = function() {
 		this.menu = [];
+	}
+
+	this.setPendingPrice = function(value) {
+		this.pendingPrice = value;
+		this.notifyObservers();
+	}
+
+	this.getPendingPrice = function() {
+		return this.pendingPrice;
 	}
 
 	this.setNumberOfGuests = function(num) {

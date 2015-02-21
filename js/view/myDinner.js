@@ -1,4 +1,4 @@
-var MyDinner = function(container, model, pendingPrice) {
+var MyDinner = function(container, model) {
 	this.myDinnerContents = function(container, model) {
 		appString = 'My Dinner';
 		appString += '<div>';
@@ -31,10 +31,10 @@ var MyDinner = function(container, model, pendingPrice) {
 			}
 			appString += '<tr>';
 				appString += '<td colspan="2">Pending</td>';
-				appString += '<td class="textAlignRight">' + pendingPrice.toFixed(2)  + '</td>';
+				appString += '<td class="textAlignRight">' + model.getPendingPrice().toFixed(2)  + '</td>';
 			appString += '</tr>';
 			appString += '<tr>';
-				appString += '<td class="textAlignRight borderTop" colspan="3">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests() + pendingPrice).toFixed(2) + '</td>';
+				appString += '<td class="textAlignRight borderTop" colspan="3">SEK ' + (model.getTotalMenuPrice() * model.getNumberOfGuests() + model.getPendingPrice()).toFixed(2) + '</td>';
 			appString += '</tr>';
 		appString += '</table>';
 		appString += '<div class="center">';

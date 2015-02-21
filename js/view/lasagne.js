@@ -72,6 +72,8 @@ var LasagneView = function(container, model, dishID) {
 
 	declareWidgets(container);
 
+	model.setPendingPrice(model.getDishPrice(dishID) * model.getNumberOfGuests());
+
 	LasagneController(this, model);
 
 }
