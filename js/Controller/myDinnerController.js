@@ -16,5 +16,10 @@ var MyDinnerController = function(view, model) {
 		DinnerOverview($('#mainRow'), model);
 	});
 
+	view.numberOfGuestsInput.change(function() {
+		//alert(view.numberOfGuestsInput[0].value);
+		model.setNumberOfGuests(view.numberOfGuestsInput[0].value);
+	});
+
 	removeButtonLinks(view, model);
 }

@@ -2,7 +2,7 @@ var MyDinner = function(container, model, pendingPrice) {
 	this.myDinnerContents = function(container, model) {
 		appString = 'My Dinner';
 		appString += '<div>';
-			appString += '<input type="number" value="3"/>';
+			appString += '<input type="number" value="' + model.getNumberOfGuests() + '" id="numberOfGuests"/>';
 		appString += '</div>';
 		appString += '<div class="row">';
 			appString += '<div class="col-xs-12 sidebarTableTitle"">';
@@ -48,6 +48,7 @@ var MyDinner = function(container, model, pendingPrice) {
 		this.myDinnerContainer.empty();
 		this.myDinnerContents(this.myDinnerContainer, model);
 		this.confirmDinnerButton = $('#confirmDinnerButton'); //Vi måste omdeklarera knappen eftersom den tillfälligtvis var borta. Det fungerade inte att bara köra declareWidgets igen av någon anledning.
+		this.numberOfGuestsInput = $('#numberOfGuests');
 		controller = new MyDinnerController(this, model);
 	}
 
@@ -55,6 +56,7 @@ var MyDinner = function(container, model, pendingPrice) {
 		this.container = container;
 		this.myDinnerContainer = this.container.find('#myDinner');
 		this.confirmDinnerButton = $('#confirmDinnerButton');
+		this.numberOfGuestsInput = $('#numberOfGuests');
 	}
 
 	//menu = model.getFullMenu();
