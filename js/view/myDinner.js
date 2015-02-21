@@ -1,6 +1,6 @@
 var MyDinner = function(container, model, pendingPrice) {
 	this.myDinnerContents = function(container, model) {
-		appString += 'My Dinner';
+		appString = 'My Dinner';
 		appString += '<div>';
 			appString += '<input type="number" value="3"/>';
 		appString += '</div>';
@@ -18,13 +18,13 @@ var MyDinner = function(container, model, pendingPrice) {
 		appString += '</div>';
 
 		appString += '<table class="tableSidebar">';
-			for (key in menu) {
+			for (key in model.menu) {
 				appString += '<tr class="border">';
 					appString += '<td>' + model.getNumberOfGuests() + '</td>';
-					appString += '<td class="textAlignCenter">' + menu[key]["name"] + '</td>';
-					appString += '<td class="textAlignRight">' + (model.getDishPrice(menu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + '</td>';
+					appString += '<td class="textAlignCenter">' + model.menu[key]["name"] + '</td>';
+					appString += '<td class="textAlignRight">' + (model.getDishPrice(model.menu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + '</td>';
 					appString += '<td>';
-						appString += '<button class="removeButton" id="remove_' + menu[key] + '">Ⓧ</button>';
+						appString += '<button class="removeButton" id="remove_' + model.menu[key] + '">Ⓧ</button>';
 					appString += '</td>';
 				appString += '</tr>';
 			}
@@ -59,7 +59,11 @@ var MyDinner = function(container, model, pendingPrice) {
 	container.append('<div class="col-xs-3" id="myDinner"></div>');
 	this.declareWidgets(container);
 	this.update(model, null);
+<<<<<<< HEAD
 	controller = new MyDinnerController(this, model);
 	model.addObserver(this);
+=======
+	// model.addObserver(this);
+>>>>>>> 5304d3fea92da09e8fe3bc83372b7266d255ed1d
 
 }

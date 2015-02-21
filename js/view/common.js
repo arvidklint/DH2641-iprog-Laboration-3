@@ -13,7 +13,7 @@ function header(container) {
 // }
 
 function mainRow(container) {
-	appString = '<div class="container-fluid">';
+	appString = '<div class="container-fluid" id="mainContainer">';
 		appString += '<div class="row" id="mainRow">';
 		appString += '</div>';
 	appString += '</div>';
@@ -32,4 +32,11 @@ function dishThumb(dish) {
 	dishThumbStr += '</div>';
 
 	return dishThumbStr;
+}
+
+function meinFrame(container, model) {
+	appString = '<div class="col-xs-9" id="meinFrame">';
+	appString += '</div>';
+
+	container.append(appString);
 }
