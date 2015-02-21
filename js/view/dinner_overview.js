@@ -36,24 +36,26 @@ var DinnerOverview = function(container, model) {
 
 				appString += '<div id="dinnerOverviewDivider"/>';
 
-				appString += '<button class="btn">Print Full Recipe</button>';
+				appString += '<button class="btn" id="printButton">Print Full Recipe</button>';
 			appString += '</div>';
 		appString += '</div>';
 
 		container.append(appString);
 	}
 
-	this.update = function(model, arg) {
-		this.dinnerOverviewContainer.remove();
-		this.dinnerOverviewContents(this.container, model);
-	}
+	// this.update = function(model, arg) {
+	// 	this.dinnerOverviewContainer.remove();
+	// 	this.dinnerOverviewContents(this.container, model);
+	// }
 
 	this.declareWidgets = function(container) {
 		this.continer = container;
 		this.dinnerOverviewContainer = container.find("#dinnerOverviewMain");
+		this.printButton = container.find("#printButton");
 	}
 
 	this.dinnerOverviewContents(container, model);
 	this.declareWidgets(container);
+	controller = new DinnerOverviewController(this, model);
 }
 

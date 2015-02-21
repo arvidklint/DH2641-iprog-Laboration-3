@@ -19,13 +19,13 @@ var MyDinner = function(container, model, pendingPrice) {
 
 		appString += '<table class="tableSidebar">';
 			fullMenu = model.getFullMenu();
-			for (key in fullMenu) {
+			for (var key = 0; key < fullMenu.length; key++) {
 				appString += '<tr class="border">';
 					appString += '<td>' + model.getNumberOfGuests() + '</td>';
 					appString += '<td class="textAlignCenter">' + fullMenu[key]["name"] + '</td>';
 					appString += '<td class="textAlignRight">' + (model.getDishPrice(fullMenu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + '</td>';
 					appString += '<td>';
-						appString += '<button class="removeButton" id="remove_' + fullMenu[key] + '">Ⓧ</button>';
+						appString += '<button class="removeButton" dishid="' + fullMenu[key]["id"] + '">Ⓧ</button>';
 					appString += '</td>';
 				appString += '</tr>';
 			}

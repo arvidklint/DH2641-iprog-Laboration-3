@@ -100,7 +100,7 @@ var DinnerModel = function() {
 				delete this.menu[key];
 			}
 		}
-		
+		this.notifyObservers();
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
