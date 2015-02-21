@@ -18,13 +18,14 @@ var MyDinner = function(container, model, pendingPrice) {
 		appString += '</div>';
 
 		appString += '<table class="tableSidebar">';
-			for (key in model.menu) {
+			fullMenu = model.getFullMenu();
+			for (key in fullMenu) {
 				appString += '<tr class="border">';
 					appString += '<td>' + model.getNumberOfGuests() + '</td>';
-					appString += '<td class="textAlignCenter">' + model.menu[key]["name"] + '</td>';
-					appString += '<td class="textAlignRight">' + (model.getDishPrice(model.menu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + '</td>';
+					appString += '<td class="textAlignCenter">' + fullMenu[key]["name"] + '</td>';
+					appString += '<td class="textAlignRight">' + (model.getDishPrice(fullMenu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + '</td>';
 					appString += '<td>';
-						appString += '<button class="removeButton" id="remove_' + model.menu[key] + '">Ⓧ</button>';
+						appString += '<button class="removeButton" id="remove_' + fullMenu[key] + '">Ⓧ</button>';
 					appString += '</td>';
 				appString += '</tr>';
 			}
@@ -44,26 +45,25 @@ var MyDinner = function(container, model, pendingPrice) {
 	}
 
 	this.update = function(model, arg) {
-		this.myDinner.empty();
-		this.myDinnerContents(this.myDinner, model);
+		this.myDinnerContainer.empty();
+		this.myDinnerContents(this.myDinnerContainer, model);
+		this.confirmDinnerButton = $('#confirmDinnerButton'); //Vi måste omdeklarera knappen eftersom den tillfälligtvis var borta. Det fungerade inte att bara köra declareWidgets igen av någon anledning.
+		controller = new MyDinnerController(this, model);
 	}
 
 	this.declareWidgets = function(container) {
 		this.container = container;
-		this.myDinner = this.container.find('#myDinner');
-		this.confirmDinnerButton = this.container.find('#confirmDinnerButton');
+		this.myDinnerContainer = this.container.find('#myDinner');
+		this.confirmDinnerButton = $('#confirmDinnerButton');
 	}
 
-	menu = model.getFullMenu();
+	//menu = model.getFullMenu();
 
 	container.append('<div class="col-xs-3" id="myDinner"></div>');
+	this.myDinnerContents($('#myDinner'), model);
 	this.declareWidgets(container);
-	this.update(model, null);
-<<<<<<< HEAD
+	
 	controller = new MyDinnerController(this, model);
 	model.addObserver(this);
-=======
-	// model.addObserver(this);
->>>>>>> 5304d3fea92da09e8fe3bc83372b7266d255ed1d
 
 }

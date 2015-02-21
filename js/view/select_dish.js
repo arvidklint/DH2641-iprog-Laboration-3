@@ -2,7 +2,7 @@ var SelectDish = function(container, model, dishType) {
 	dishType = dishType || "starter";
 
 	this.dishChooser = function(container, dishType) {
-		appString += '<div class="row">';
+		appString = '<div class="row">';
 			appString += '<div class="col-xs-12" id="dishChooserHeadline">';
 				appString += '<p id="select_dish">Select dish</p>';
 			appString += '</div>';
