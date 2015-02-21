@@ -51,6 +51,7 @@ var MyDinner = function(container, model, pendingPrice) {
 	this.declareWidgets = function(container) {
 		this.container = container;
 		this.myDinner = this.container.find('#myDinner');
+		this.confirmDinnerButton = this.container.find('#confirmDinnerButton');
 	}
 
 	menu = model.getFullMenu();
@@ -58,6 +59,7 @@ var MyDinner = function(container, model, pendingPrice) {
 	container.append('<div class="col-xs-3" id="myDinner"></div>');
 	this.declareWidgets(container);
 	this.update(model, null);
+	controller = new MyDinnerController(this, model);
 	model.addObserver(this);
 
 }
