@@ -13,7 +13,7 @@ function header(container) {
 // }
 
 function mainRow(container) {
-	appString = '<div class="container-fluid">';
+	appString = '<div class="container-fluid" id="mainContainer">';
 		appString += '<div class="row" id="mainRow">';
 		appString += '</div>';
 	appString += '</div>';
