@@ -75,5 +75,4 @@ var LasagneView = function(container, model, dishID) {
 	model.setPendingPrice(model.getDishPrice(dishID) * model.getNumberOfGuests());
 
 	LasagneController(this, model);
-
 }

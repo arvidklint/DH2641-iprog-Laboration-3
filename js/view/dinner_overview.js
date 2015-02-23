@@ -17,7 +17,7 @@ var DinnerOverview = function(container, model) {
 							appString += dishThumb(fullMenu[key]);
 							appString += '<div class="priceFrame">';
 								appString += '<span class="priceAtBottom">';
-									appString += model.getDishPrice(fullMenu[key]["id"]) + " SEK";
+									appString += (model.getDishPrice(fullMenu[key]["id"]) * model.getNumberOfGuests()).toFixed(2) + " SEK";
 								appString += '</span>';
 							appString += '</div>';
 						appString += '</div>';
@@ -28,7 +28,7 @@ var DinnerOverview = function(container, model) {
 						appString += '</div>';
 						appString += '<div class="totalPriceFrame">';
 							appString += '<span class="priceAtBottom">';
-								appString += model.getTotalMenuPrice() + " SEK";
+								appString += (model.getTotalMenuPrice() * model.getNumberOfGuests()).toFixed(2) + " SEK";
 							appString += '</span>';
 						appString += '</div>';
 					appString += '</div>';
