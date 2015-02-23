@@ -39,6 +39,7 @@ var SelectDish = function(container, model, dishType) {
 		}
 
 		container.append(dishListStr);
+		model.setPendingPrice(0);
 	}
 
 	this.shortenDescription = function(description) {
